@@ -153,6 +153,12 @@ python -m paper_validator claim --claim causal-swap --trials 30
 python -m paper_validator claim --claim all --trials 30
 ```
 
+## Related
+
+- [**hermes-workspace**](https://github.com/YuhaoLin2005/hermes-workspace) — Paper, experiments, and data for the 5-layer governance architecture
+- [**DEV.to**](https://dev.to/yuhaolin2005) — 6 technical articles detailing each layer and experiment
+- [**掘金 (Juejin)**](https://juejin.cn/user/4250072430682412) — Chinese-language deep dives
+
 ## License
 
 MIT
