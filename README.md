@@ -2,7 +2,7 @@
 
 > **A governance audit sub-agent.** Not an agent that does tasks — an agent that *measures whether governance rules actually change agent behavior.* It accompanies any LLM-powered agent and answers one question: "Are your rules working?"
 
-Reproducible validation harness for the paper **"Agent Configuration Drift: A Five-Layer Governance Architecture"** (Lin Yuhao, 2026). Internalizes the 5-layer architecture as importable Python modules and validates all 8 paper claims with reproducible experiments against live LLM APIs.
+Independent governance audit framework accompanying **"Agent Configuration Drift: A Five-Layer Governance Architecture"** (Lin Yuhao, 2026). Internalizes the 5-layer architecture as importable Python modules and independently validates 8 governance claims (distinct from but complementary to the paper's 12 experiments) with reproducible A/B tests against live LLM APIs.
 
 ```bash
 pip install requests
