@@ -1,0 +1,76 @@
+{
+  "experiment": "P1-2-format-gate-cross",
+  "design": "4 conditions × 2 tasks × 30 trials",
+  "timestamp": "2026-07-13T15:39:18Z",
+  "hypothesis": "Format effect on reasoning is larger under GateGuard-OFF",
+  "h1_verdict": "NOT_CONFIRMED",
+  "effect_sizes": {
+    "format_on_reasoning": {
+      "gate_on": -0.277,
+      "gate_off": -0.25
+    },
+    "format_on_mechanical": {
+      "gate_on": 2.96,
+      "gate_off": 0.0
+    }
+  },
+  "per_condition": {
+    "code_gate_on": {
+      "mech_mean": 5.0,
+      "reason_mean": 4.2,
+      "mech_ci95": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "reason_ci95": [
+        4.2,
+        3.983,
+        4.4
+      ]
+    },
+    "code_gate_off": {
+      "mech_mean": 3.15,
+      "reason_mean": 3.983,
+      "mech_ci95": [
+        3.15,
+        3.067,
+        3.233
+      ],
+      "reason_ci95": [
+        3.983,
+        3.833,
+        4.117
+      ]
+    },
+    "prose_gate_on": {
+      "mech_mean": 3.25,
+      "reason_mean": 4.417,
+      "mech_ci95": [
+        3.25,
+        3.033,
+        3.45
+      ],
+      "reason_ci95": [
+        4.417,
+        4.25,
+        4.583
+      ]
+    },
+    "prose_gate_off": {
+      "mech_mean": 3.15,
+      "reason_mean": 4.167,
+      "mech_ci95": [
+        3.15,
+        3.05,
+        3.25
+      ],
+      "reason_ci95": [
+        4.167,
+        3.95,
+        4.367
+      ]
+    }
+  },
+  "n_total": 240
+}

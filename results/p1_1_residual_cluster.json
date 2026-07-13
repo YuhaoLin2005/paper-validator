@@ -1,0 +1,61 @@
+{
+  "experiment": "P1-1-residual-cluster",
+  "design": "5 task types x 40 trials",
+  "timestamp": "2026-07-13T14:30:56Z",
+  "cluster_evidence": [
+    {
+      "task_type": "T1_format_tag",
+      "label": "Format-tag [L1 mechanizable]",
+      "mechanizable": true,
+      "compliance_rate": 100.0,
+      "total_violations": 0,
+      "mechanical_violations": 0,
+      "semantic_violations": 0,
+      "mechanical_pct": 0
+    },
+    {
+      "task_type": "T2_section_header",
+      "label": "Section-header [L1 mechanizable]",
+      "mechanizable": true,
+      "compliance_rate": 100.0,
+      "total_violations": 0,
+      "mechanical_violations": 0,
+      "semantic_violations": 0,
+      "mechanical_pct": 0
+    },
+    {
+      "task_type": "T3_checklist",
+      "label": "Checklist [L1/L2 boundary]",
+      "mechanizable": true,
+      "compliance_rate": 0.0,
+      "total_violations": 40,
+      "mechanical_violations": 0,
+      "semantic_violations": 40,
+      "mechanical_pct": 0.0
+    },
+    {
+      "task_type": "T4_reasoning",
+      "label": "Reasoning [L2, semi-mechanizable]",
+      "mechanizable": false,
+      "compliance_rate": 35.0,
+      "total_violations": 26,
+      "mechanical_violations": 0,
+      "semantic_violations": 26,
+      "mechanical_pct": 0.0
+    },
+    {
+      "task_type": "T5_uncertainty",
+      "label": "Uncertainty [L2/L3, not mechanizable]",
+      "mechanizable": false,
+      "compliance_rate": 42.5,
+      "total_violations": 23,
+      "mechanical_violations": 21,
+      "semantic_violations": 2,
+      "mechanical_pct": 91.3
+    }
+  ],
+  "mech_viol_rate_in_mech_tasks": 0.0,
+  "sem_viol_rate_in_sem_tasks": 0.571,
+  "verdict": "INCONCLUSIVE",
+  "n_total": 200
+}
