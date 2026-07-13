@@ -78,13 +78,13 @@ class MyAgent:
 
     def before_action(self, action):
         """Governance gate: block unsafe actions before execution."""
-        if not self.gates.health_checker.run().ok:
+        if not self.gates.health.run().ok:
             raise GovernanceViolation("Health check failed")
 
     def after_session(self):
         """Post-session: measure rule effectiveness, detect drift."""
         risk = self.drift.assess()
-        if risk.score > 50:
+        if risk.risk_score > 50:
             self.flag_regeneration()
         # Validate that our rules still bind
         result = run_claim("causal-swap", n_trials=10)

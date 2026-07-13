@@ -62,11 +62,11 @@ def handle_request(request: dict) -> dict:
         if name == "health_check":
             from layers.l1_gates import L1Gates
             from layers.l4_drift_predictor import DriftPredictor
-            h = L1Gates().health_checker.run()
+            h = L1Gates().health.run()
             risk = DriftPredictor().assess()
             text = json.dumps({"health": "ok" if h.ok else "degraded",
                                "checks_passed": len(h.passed), "drift_risk": risk.risk_level,
-                               "drift_score": risk.score})
+                               "drift_score": risk.risk_score})
             return {"jsonrpc": "2.0", "id": req_id,
                     "result": {"content": [{"type": "text", "text": text}]}}
 

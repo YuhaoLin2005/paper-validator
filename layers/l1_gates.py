@@ -52,10 +52,13 @@ class HealthCheckResult:
 class HealthChecker:
     """System health checks at session start."""
 
-    def __init__(self, store: "StateStore", flags: "FlagManager",
+    def __init__(self, store: "Optional[StateStore]" = None,
+                 flags: "Optional[FlagManager]" = None,
                  claude_dir: str = "~/.claude"):
-        self._store = store
-        self._flags = flags
+        from state.store import StateStore as SS
+        from state.flags import FlagManager as FM
+        self._store = store or SS()
+        self._flags = flags or FM(self._store)
         self._claude_dir = Path(claude_dir).expanduser()
 
     def run(self) -> HealthCheckResult:
@@ -279,14 +282,17 @@ class RegenerationValidator:
 class L1Gates:
     """Aggregate L1 layer: bundles all mechanical gates."""
 
-    def __init__(self, store: "StateStore", flags: "FlagManager",
+    def __init__(self, store: "Optional[StateStore]" = None,
+                 flags: "Optional[FlagManager]" = None,
                  safe_mode: bool = False):
-        self.health = HealthChecker(store, flags)
-        self.quality = QualityGate(store)
-        self.write = WriteGuard(store, safe_mode=safe_mode)
-        self.regeneration = RegenerationValidator(store)
-        self._store = store
-        self._flags = flags
+        from state.store import StateStore as SS
+        from state.flags import FlagManager as FM
+        self._store = store or SS()
+        self._flags = flags or FM(self._store)
+        self.health = HealthChecker(self._store, self._flags)
+        self.quality = QualityGate(self._store)
+        self.write = WriteGuard(self._store, safe_mode=safe_mode)
+        self.regeneration = RegenerationValidator(self._store)
 
     def startup_check(self) -> HealthCheckResult:
         result = self.health.run()

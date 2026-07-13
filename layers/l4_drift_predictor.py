@@ -52,10 +52,13 @@ class DriftPredictor:
     MEDIUM_THRESHOLD = 50
     HIGH_THRESHOLD = 75
 
-    def __init__(self, store: "StateStore", flags: "FlagManager",
+    def __init__(self, store: "Optional[StateStore]" = None,
+                 flags: "Optional[FlagManager]" = None,
                  feature_weights: Optional[dict[str, float]] = None):
-        self._store = store
-        self._flags = flags
+        from state.store import StateStore as SS
+        from state.flags import FlagManager as FM
+        self._store = store or SS()
+        self._flags = flags or FM(self._store)
         self._weights = feature_weights or DRIFT_FEATURE_WEIGHTS
         self._history: list[DriftAssessment] = []
 
