@@ -15,6 +15,19 @@ def handle_request(request: dict) -> dict:
     method = request.get("method", "")
     req_id = request.get("id", 0)
 
+    if method == "initialize":
+        return {
+            "jsonrpc": "2.0", "id": req_id,
+            "result": {
+                "protocolVersion": "2024-11-05",
+                "capabilities": {"tools": {}},
+                "serverInfo": {"name": "paper-validator", "version": "1.0.0"}
+            }
+        }
+
+    if method == "notifications/initialized":
+        return {"jsonrpc": "2.0", "id": req_id, "result": {}}
+
     if method == "tools/list":
         return {
             "jsonrpc": "2.0", "id": req_id,
