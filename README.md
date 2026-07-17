@@ -125,16 +125,16 @@ paper_validator/
 
 ## The 8 Claims
 
-| # | Claim | What it tests | Verdict |
-|---|-------|---------------|---------|
-| 1 | l0-safety-prompt | Rules measurably constrain outputs | PARTIALLY_CONFIRMED |
-| 2 | causal-swap | Rule removal/reinsertion reverses behavior | PARTIALLY_CONFIRMED |
-| 3 | logprob-probe-v3 | Logprob differentials measure constraint fidelity | PARTIALLY_CONFIRMED |
-| 4 | dissociation | L2 neural gate and L3 causal encoding are distinct | PARTIALLY_CONFIRMED |
-| 5 | gateguard-off | Rule removal degrades compliance (gradient) | PARTIALLY_CONFIRMED |
-| 6 | l1-visibility | Mechanical gates produce measurable differences | PARTIALLY_CONFIRMED |
-| 7 | prose-barrier | Code-form rules beat prose-form rules | PARTIALLY_CONFIRMED |
-| 8 | cross-model | Governance effect generalizes | PARTIALLY_CONFIRMED |
+| # | Claim | What it tests | DEV.to Article | Verdict |
+|---|-------|---------------|----------------|---------|
+| 1 | l0-safety-prompt | Rules measurably constrain outputs | [Psychological Safety for AI](https://dev.to/yuhaolin2005/i-told-my-ai-youre-safe-to-say-i-dont-know-then-i-measured-what-changed-with-logprobs-986) | PARTIALLY_CONFIRMED |
+| 2 | causal-swap | Rule removal/reinsertion reverses behavior | [I Ran 150 Tasks](https://dev.to/yuhaolin2005/i-ran-150-tasks-to-test-if-ai-agents-follow-rules-the-answer-surprised-me-2670) | PARTIALLY_CONFIRMED |
+| 3 | logprob-probe-v3 | Logprob differentials measure constraint fidelity | [I Built a Neural Gate](https://dev.to/yuhaolin2005/i-built-a-neural-gate-for-my-ai-agent-layer-2-of-self-verification-6o2) | PARTIALLY_CONFIRMED |
+| 4 | dissociation | L2 neural gate and L3 causal encoding are distinct | [Follow-Up: Decision-Token](https://dev.to/yuhaolin2005/follow-up-decision-token-measurement-format-as-fallback-and-what-changed-18jo) | PARTIALLY_CONFIRMED |
+| 5 | gateguard-off | Rule removal degrades compliance (gradient) | [I Pre-Registered a Hypothesis](https://dev.to/yuhaolin2005/i-pre-registered-a-hypothesis-600-api-calls-later-the-data-killed-it-1aec) | PARTIALLY_CONFIRMED |
+| 6 | l1-visibility | Mechanical gates produce measurable differences | [I Ran 150 Tasks](https://dev.to/yuhaolin2005/i-ran-150-tasks-to-test-if-ai-agents-follow-rules-the-answer-surprised-me-2670) | PARTIALLY_CONFIRMED |
+| 7 | prose-barrier | Code-form rules beat prose-form rules | [AI Agents Can't Self-Verify](https://dev.to/yuhaolin2005/ai-agents-cant-self-verify-and-thats-a-structural-constraint-not-a-bug-1d7l) | PARTIALLY_CONFIRMED |
+| 8 | cross-model | Governance effect generalizes | — | PARTIALLY_CONFIRMED |
 
 **Key finding**: Format-enforcement tags (`[THINK]:`, `[VERIFY]:`) achieve **100% compliance** with rules vs. **0%** in control — a clean, replicable causal effect.
 
@@ -153,10 +153,14 @@ python -m paper_validator claim --claim causal-swap --trials 30
 python -m paper_validator claim --claim all --trials 30
 ```
 
+## From a DEV.to Article?
+
+See the **[Navigation Map](https://github.com/YuhaoLin2005/hermes-workspace/blob/main/NAVIGATION.md)** in hermes-workspace — full article→paper section→claim mapping. Find the claim name for the article you just read and run it directly.
+
 ## Related
 
-- [**hermes-workspace**](https://github.com/YuhaoLin2005/hermes-workspace) — Paper, experiments, and data for the 5-layer governance architecture
-- [**DEV.to**](https://dev.to/yuhaolin2005) — 6 technical articles detailing each layer and experiment
+- [**hermes-workspace**](https://github.com/YuhaoLin2005/hermes-workspace) — Paper, experiments, data, and [NAVIGATION.md](https://github.com/YuhaoLin2005/hermes-workspace/blob/main/NAVIGATION.md)
+- [**DEV.to**](https://dev.to/yuhaolin2005) — 11+ technical articles detailing each layer and experiment
 - [**掘金 (Juejin)**](https://juejin.cn/user/4250072430682412) — Chinese-language deep dives
 
 ## License

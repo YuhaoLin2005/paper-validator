@@ -1,6 +1,6 @@
 {
   "paper-validator": {
-    "command": "C:/Users/86131/AppData/Local/Programs/Python/Python312/python",
-    "args": ["C:/Users/86131/paper-validator/mcp_server.py"]
+    "command": "python",
+    "args": ["./mcp_server.py"]
   }
 }

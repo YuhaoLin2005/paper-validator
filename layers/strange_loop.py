@@ -45,7 +45,10 @@ class StrangeLoop:
     """
 
     MAX_VERSIONS = 3
-    SELF_MODEL_PATH = "~/.claude/projects/C--Users-86131/memory/self-model.md"
+    SELF_MODEL_PATH = os.environ.get(
+        "ECC_SELF_MODEL_PATH",
+        "~/.claude/projects/C--Users-86131/memory/self-model.md"
+    )
 
     def __init__(self, store: "StateStore", flags: "FlagManager",
                  constitution=None, gates=None,
