@@ -28,8 +28,12 @@ MECHANICAL_SIGNALS = [
     (r'\b(?:modification\s*time|mtime|timestamp|last\s*(?:modified|updated))', 0.25, "mtime_check"),
     (r'\b(?:exit\s*code|return\s*code|status\s*code|exit\s*0)\b', 0.25, "exit_code"),
     (r'\b(?:hook|trigger|callback|listener)\s+(?:wired?|connected?|registered?|active)', 0.25, "hook_wiring"),
-    (r'\[(?:REASONING|VERIFY|THINK|CHECK|ANSWER|ALTERNATIVE|TRADE.?OFF)\]', 0.30, "structured_markers"),
-    (r'\bMUST\s+(?:use|include|output|write|name|state|identify|flag)\b', 0.20, "must_directive"),
+    # IGNORECASE: matches [ANSWER], [answer], [Answer] — text is lowered but bracket tags are case-convention
+    (r'\[(?:reasoning|verify|think|check|answer|alternatives?|trade.?off|end)\]', 0.30, "structured_markers"),
+    # Broader: MUST/NEVER/EVERY + any verb (was: whitelist of 8 verbs — missed "be wrapped", "start with", "acknowledge")
+    (r'\b(?:must|never|every)\s+\w+', 0.20, "must_directive"),
+    # Code-fence / backtick markers — strong mechanical signal for format rules
+    (r'```\w*|`[^`]+`', 0.25, "code_fence"),
     (r'\b(?:yes\s*/\s*no|pass\s*/\s*fail|true\s*/\s*false|A\s*or\s*B)\b', 0.20, "binary_check"),
     (r'\b(?:at\s+least|exactly|no\s+more\s+than|maximum|minimum)\s+\d+', 0.15, "countable"),
     (r'\b(?:pattern|regex|regular\s+expression|match)\b', 0.25, "regex_specified"),
@@ -42,6 +46,8 @@ SEMANTIC_SIGNALS = [
     (r'\b(?:alternative|trade.?off|approach|option|choice|decide)\b', -0.10, "alternatives"),
     (r'\b(?:depends?\s+on|context|situation|circumstance|case.?by.?case)\b', -0.15, "context_dependent"),
     (r'\b(?:should|might|could|consider|try\s+to|attempt\s+to)\b', -0.05, "vague_directive"),
+    # Uncertainty language — strong semantic signal (acknowledging limits = interpretation)
+    (r'\b(?:uncertain(?:ty)?|ambigu(?:ous|ity)|multiple\s+(?:valid|possible)\s+answers?)\b', -0.15, "uncertainty_language"),
 ]
 
 
