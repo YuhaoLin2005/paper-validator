@@ -1,0 +1,12 @@
+{
+  "b9ef83f7f890efe861e8b6b789f9fdbf": {
+    "hash": "b9ef83f7f890efe861e8b6b789f9fdbf",
+    "timestamp": "2026-07-17T13:29:52Z",
+    "experiment_name": "experiment_p1_2_format_gate_cross",
+    "hypothesis": "P1-2: GateGuard-off Format Effect Re-test\n================================================\n2×2 factorial: Format (code vs prose) × GateGuard (on vs off)\nTests Mike Czerwinski's question: does format s",
+    "conditions_hash": "67ef0cbcd86c4251a72a332e6a81d005",
+    "scoring_rules_hash": "e3b0c44298fc1c149afbf4c8996fb924",
+    "script_path": "C:\\Users\\86131\\tmp\\paper-validator-fresh\\experiment_p1_2_format_gate_cross.py",
+    "devto_comment_url": ""
+  }
+}
