@@ -1,0 +1,1685 @@
+{
+  "experiment": "P1-1-cross-model-replication",
+  "design": "5 task types x 20 trials x 2 models = 200 calls",
+  "baseline": "DeepSeek V4 Pro (from experiment_p1_1_residual_cluster.py)",
+  "timestamp": "20260717-143157",
+  "models": [
+    "Qwen/Qwen3.6-35B-A3B",
+    "deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "trials_per_task": 20,
+  "Qwen/Qwen3.6-35B-A3B": {
+    "model": "Qwen/Qwen3.6-35B-A3B",
+    "tasks": {
+      "T1_format_tag": {
+        "label": "Format-tag [L1 mechanizable]",
+        "compliance_rate": 0.4,
+        "compliant": 8,
+        "total": 20
+      },
+      "T2_section_header": {
+        "label": "Section-header [L1 mechanizable]",
+        "compliance_rate": 0.7,
+        "compliant": 14,
+        "total": 20
+      },
+      "T3_checklist": {
+        "label": "Checklist [L1/L2 boundary]",
+        "compliance_rate": 0.1,
+        "compliant": 2,
+        "total": 20
+      },
+      "T4_reasoning": {
+        "label": "Reasoning [L2, semi-mechanizable]",
+        "compliance_rate": 0.4,
+        "compliant": 8,
+        "total": 20
+      },
+      "T5_uncertainty": {
+        "label": "Uncertainty [L2/L3, not mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      }
+    },
+    "trials": [
+      {
+        "task_id": "T1_format_tag",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 18.33,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 17.51,
+        "error": null,
+        "response_preview": "\n\nHere's an efficient, iterative implementation that runs in O(n) time and O(1) space:\n\n```python\ndef fibonacci(n: int) -> int:\n    if n < 0:\n       "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 21.1,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 10.16,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 17.99,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): A non-negative integer representing the position i"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 13.57,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 21.09,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 17.0,
+        "error": null,
+        "response_preview": "\n\nHere's an efficient iterative implementation:\n\n```python\ndef fibonacci(n):\n    if n < 0:\n        raise ValueError(\"Input must be a non-negative integer.\")\n    if n == 0:\n        return 0\n    elif n "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 14.56,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number (0-indexed).\n    \n    Args:\n        n (int): The position in the Fibonacci sequence. Must be non-negative.\n    "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 9.01,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 16.99,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 19.3,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): A non-negative integer representing the position i"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 22.41,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 20.43,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 19.81,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 17.46,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number (0-indexed).\n    \n    Args:\n        n (int): The position in the Fibonacci sequence. Must be non-negative.\n    "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 10.08,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 10.28,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number (0-indexed).\n    \n    Args:\n        n (int): The position in the Fibonacci sequence. Must be non-negative.\n    "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 22.18,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 13.17,
+        "error": null,
+        "response_preview": "\n\nHere's an efficient, iterative implementation with type hints and error handling:\n\n```python\ndef fibonacci(n: int) -> int:\n    \"\"\"Return the nth Fibonacci number (0-indexed).\"\"\"\n    if n < 0:\n      "
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 10.93,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for different networking needs. Here"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 26.87,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ significantly in design, behavior, and use case"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 21.8,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ fundamentally in design, reliability, and use c"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 20.54,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP model, but they differ fundamentally in design and use cases:\n\n- **Con"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 14.89,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for different networking needs. Here’s ho"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 24.81,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 12.18,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for different networking needs:\n\n**Core D"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 10.69,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 24.74,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ significantly in design, behavior, and ideal us"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 28.19,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 10.04,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ significantly in design, behavior, and ideal us"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 11.19,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ significantly in design, behavior, and ideal us"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 22.66,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 29.23,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for different networking needs. Here’s a "
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 21.6,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ fundamentally in design, behavior, and ideal us"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 33.44,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for different networking needs. Here are "
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 50.66,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP model, but they differ fundamentally in design, behavior, and ideal us"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 15.49,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 23.68,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 26.09,
+        "error": null,
+        "response_preview": "\n\n[ANSWER] TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they differ fundamentally in design, behavior, and ideal use"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 24.81,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 20.3,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 29.56,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 26.9,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 16.38,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 30.26,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 31.0,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 33.51,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 20.51,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 23.87,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 32.62,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 20.1,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 19.1,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 20.75,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 20.42,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 21.54,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 20.7,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 40.13,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 18.92,
+        "error": null,
+        "response_preview": "\n\nBefore deploying a web application to production, it's essential to verify critical areas that impact stability, security, and maintainability. Here's a focused checklist to guide your pre-deploymen"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 17.34,
+        "error": null,
+        "response_preview": "\n\nBefore deploying a web application to production, it’s essential to systematically verify security, performance, configuration, and operational readiness. Use the following checklist to ensure a smo"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 20.69,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 17.98,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 16.57,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 19.09,
+        "error": null,
+        "response_preview": "\n\nYou should start with a monolith because a team of five developers lacks the bandwidth to handle the operational overhead that microservices introduce, such as distributed tracing, service discovery"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 13.7,
+        "error": null,
+        "response_preview": "\n\nFor a new e-commerce platform with only five developers, a monolith is the better choice because it drastically reduces operational overhead, accelerates feature delivery, and simplifies debugging, "
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 39.28,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 18.65,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 15.45,
+        "error": null,
+        "response_preview": "\n\nFor a team of five developers, the operational, testing, and deployment overhead of microservices would quickly become a bottleneck. Microservices require separate CI/CD pipelines, service discovery"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 16.72,
+        "error": null,
+        "response_preview": "\n\nFor a new e-commerce platform with only five developers, you should start with a monolith because the operational complexity, deployment overhead, and debugging costs of microservices would signific"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 10,
+        "compliant": 1,
+        "latency_s": 15.67,
+        "error": null,
+        "response_preview": "\n\nWith only five developers, the operational and cognitive overhead of managing distributed services would likely slow down development, increase deployment complexity, and make debugging significantl"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 17.41,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 18.51,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 22.15,
+        "error": null,
+        "response_preview": "\n\nFor a team of five developers building a new e-commerce platform, the operational overhead of microservices—including distributed tracing, service discovery, container orchestration, independent CI/"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 19.26,
+        "error": null,
+        "response_preview": "\n\nFor a new e-commerce platform with only five developers, the operational overhead of microservices would likely outweigh their benefits at this stage. Microservices require significant investment in"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 19.09,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 21.47,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 22.43,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 22.87,
+        "error": null,
+        "response_preview": "\n\nBuilding a distributed system with microservices introduces significant operational overhead, including separate deployment pipelines, service discovery, distributed tracing, database management, an"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 21.31,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 18.86,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 24.68,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 20.07,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 22.01,
+        "error": null,
+        "response_preview": "\n\n**Short answer:** No. Current encryption is not expected to become obsolete within"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 21.48,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 22.43,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 27.6,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 23.34,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 42.42,
+        "error": null,
+        "response_preview": "\n\nBased on"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 39.93,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 38.85,
+        "error": null,
+        "response_preview": "\n\n**Short answer:** No, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years.\n\n**Why:**\n- **Current quantum hardware is far from cryptographically"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 18.18,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 20.09,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 19.01,
+        "error": null,
+        "response_preview": "\n\n**Short answer:** No. Based on current scientific consensus and engineering progress, quantum computing is not expected to make widely used encryption obsolete within the next five years.\n\n**Why the"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 18.87,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 19.11,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 17.39,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 18.13,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 18.47,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 17.18,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 18.31,
+        "error": null,
+        "response_preview": "\n\n**Short answer:** No. It is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years.\n\n**Why:**\n- **Technical gap:** Breaking widely used asymmetric encry"
+      }
+    ]
+  },
+  "deepseek-ai/DeepSeek-V4-Flash": {
+    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "tasks": {
+      "T1_format_tag": {
+        "label": "Format-tag [L1 mechanizable]",
+        "compliance_rate": 1.0,
+        "compliant": 20,
+        "total": 20
+      },
+      "T2_section_header": {
+        "label": "Section-header [L1 mechanizable]",
+        "compliance_rate": 0.95,
+        "compliant": 19,
+        "total": 20
+      },
+      "T3_checklist": {
+        "label": "Checklist [L1/L2 boundary]",
+        "compliance_rate": 1.0,
+        "compliant": 20,
+        "total": 20
+      },
+      "T4_reasoning": {
+        "label": "Reasoning [L2, semi-mechanizable]",
+        "compliance_rate": 0.95,
+        "compliant": 19,
+        "total": 20
+      },
+      "T5_uncertainty": {
+        "label": "Uncertainty [L2/L3, not mechanizable]",
+        "compliance_rate": 0.25,
+        "compliant": 5,
+        "total": 20
+      }
+    },
+    "trials": [
+      {
+        "task_id": "T1_format_tag",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 7.05,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.\n\n  "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 12.0,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the n-th Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n >= 2.\n\n   "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 7.4,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) for n > 1.\n\n    Args:\n   "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 48.6,
+        "error": null,
+        "response_preview": "Below is a Python function that efficiently calculates the nth Fibonacci number using an iterative approach (O(n) time, O(1) space). It handles non‑negative integers and includes a clear docstring.\n\n`"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 24.18,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the nth Fibonacci number (0-indexed).\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 8.18,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the n-th Fibonacci number (0-indexed).\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 9.24,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n                 Must be a non-negative "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 9.28,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) for n > 1.\n\n    Args:\n   "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 9.8,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) for n > 1.\n\n    Args:\n   "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 10,
+        "compliant": 1,
+        "latency_s": 9.24,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    F(0) = 0, F(1) = 1, and for n > 1: F(n) = F(n-1) + F(n-2).\n\n    Args:\n        n (int): A non-negative integer index.\n\n    "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 7.46,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.\n\n    Args:\n       "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 7.38,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the n-th Fibonacci number (0-indexed).\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 10.11,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the n-th Fibonacci number (0-indexed).\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 6.64,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.\n\n    Args:\n       "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 11.95,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Return the nth Fibonacci number.\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1, and for n > 1, F(n) = F(n-1) + F(n-2).\n\n    Args:\n      "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 5.21,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n                 Must be a non-negative "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 6.65,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n: int) -> int:\n    \"\"\"\n    Return the n-th Fibonacci number (0-indexed).\n\n    The Fibonacci sequence is defined as:\n        F(0) = 0, F(1) = 1,\n        F(n) = F(n-1) + F(n-2) "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 6.29,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n                 Must be a non-negative "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 13.39,
+        "error": null,
+        "response_preview": "Below is an efficient iterative Python function that returns the nth Fibonacci number (with F(0) = 0 and F(1) = 1). It runs in O(n) time and uses constant space.\n\n```python\ndef fibonacci(n):\n    \"\"\"\n "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 4.97,
+        "error": null,
+        "response_preview": "```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n                 Must be a non-negative "
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 32.64,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over IP networks, but they are designed for very different purpo"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 31.81,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two core transport layer protocols in the Internet Protocol Suite. The fundamental difference is that **TCP is a conn"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 24.99,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols in the Internet protocol suite. The fundamental difference is that TCP is a"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 23.8,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for very different purposes.\n\n**TCP (Transm"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 26.11,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for very different purposes. The fundamenta"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 36.41,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols used for sending data over the internet. The fundamental difference lies in"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 23.24,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for very different purposes.\n\n**Key Differe"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 7.61,
+        "error": null,
+        "response_preview": "[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols, but they differ in key ways:\n\n- **Connection**: TCP is connection-oriented, requiring"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 28.71,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols of the Internet Protocol Suite. They both allow applications to communicate"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 1772.22,
+        "error": "The read operation timed out",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 27.42,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols in the TCP/IP suite. The fundamental difference lies in their design philos"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 3.73,
+        "error": null,
+        "response_preview": "[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols, but they differ in reliability, connection orientation, and use cases. TCP is connect"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 23.89,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols of the Internet Protocol Suite. The fundamental difference lies in their tr"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 23.22,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols in the TCP/IP suite. The core difference is that TCP prioritizes **reliabil"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 30.86,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for very different purposes. The fundamenta"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 22.13,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols in the TCP/IP suite. The core difference is that TCP prioritizes **reliabil"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 28.74,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols in the TCP/IP suite, but they are designed for very different purposes. The core diffe"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 6.14,
+        "error": null,
+        "response_preview": "[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols, but they differ in reliability, connection orientation, and use cases. TCP is connect"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 3.73,
+        "error": null,
+        "response_preview": "[ANSWER]: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols, but they differ in reliability, connection orientation, and use cases. TCP is connect"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 26.43,
+        "error": null,
+        "response_preview": "[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport layer protocols in the TCP/IP suite. The fundamental difference lies in their design philos"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 32.74,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, it's essential to systematically verify security, performance, reliability, and compliance. Here is a comprehensive checklist to guide you through the"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 37.47,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, it's crucial to systematically verify several key areas. Here is a comprehensive checklist to guide you through the process:\n\n**Security & Configurati"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 25.02,
+        "error": null,
+        "response_preview": "Here is a checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Security Hardening:** Ensure HTTPS is enforced, all secrets (API keys, database passwords) ar"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 32.58,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Security Hardening:** Enforce HTTPS with HSTS, validate CORS origins, store sec"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 5.25,
+        "error": null,
+        "response_preview": "- [ ] Verify that all environment variables and configuration settings are correctly set for the production environment.\n- [ ] Ensure that all security measures are in place, such as HTTPS, proper aut"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 30.53,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, it's essential to systematically verify security, performance, reliability, and compliance. Here is a comprehensive checklist to guide you through the"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 32.64,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, it's essential to systematically verify security, performance, reliability, and compliance. Here is a comprehensive checklist covering the most critic"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 26.43,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production:\n\n### Security\n- [ ] All secrets (API keys, database passwords, JWT secrets) are stored i"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 38.34,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production.\n\n- [ ] **Security Hardening:** Ensure all secrets (API keys, database passwords) are sto"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 10,
+        "compliant": 1,
+        "latency_s": 34.96,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Enforce HTTPS** and verify the SSL/TLS certificate is valid, properly installed"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 25.55,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, it's essential to systematically verify several critical areas to ensure security, reliability, and performance. Here is a comprehensive checklist to "
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 29.48,
+        "error": null,
+        "response_preview": "Deploying to production is a critical milestone that requires careful verification across security, infrastructure, and operational readiness. Here is a comprehensive checklist to review before you hi"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 31.5,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Security & Secrets Management:** Ensure all API keys, database passwords, and s"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 34.32,
+        "error": null,
+        "response_preview": "Here is a checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Security Hardening:** Enforce HTTPS, externalize all secrets (API keys, DB passwords) via env"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 23.34,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist to review before deploying a web application to production. It covers security, performance, reliability, and compliance.\n\n- [ ] **Security Hardening:** Enforce HTTPS"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 37.26,
+        "error": null,
+        "response_preview": "Before deploying a web application to production, you should systematically verify the following critical areas. Here is a comprehensive checklist:\n\n- [ ] **Security Hardening:** Ensure HTTPS is enfor"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 3.16,
+        "error": null,
+        "response_preview": "- [ ] Verify that all environment variables and configuration settings are correctly set for the production environment.\n- [ ] Ensure that all security measures are in place, such as HTTPS, input vali"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 2.75,
+        "error": null,
+        "response_preview": "- [ ] Verify that all environment variables and configuration settings are correctly set for the production environment.\n- [ ] Ensure that all security measures are in place, such as HTTPS, input vali"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 30.14,
+        "error": null,
+        "response_preview": "Here is a comprehensive checklist of critical items to verify before deploying a web application to production:\n\n- [ ] **Security Hardening:** Enforce HTTPS (TLS 1.2+), sanitize all user inputs to pre"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 2.65,
+        "error": null,
+        "response_preview": "- [ ] Verify that all environment variables and configuration settings are correctly set for the production environment.\n- [ ] Ensure that all security measures are in place, such as HTTPS, authentica"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 22.64,
+        "error": null,
+        "response_preview": "We should use a monolith for a new e-commerce platform with 5 developers because a small team of 5 developers is best served by a simpler architecture that minimizes operational overhead, cognitive lo"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 38.56,
+        "error": null,
+        "response_preview": "**Recommendation: Start with a well-structured modular monolith.**\n\n**Reasoning:**\n\nFor a new e-commerce platform built by a team of only 5 developers, a monolith is the superior starting point **beca"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 26.94,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to **start with a monolith**—specifically, a well-structured **modular monolith**.\n\nHere is the reasoning for"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 35.55,
+        "error": null,
+        "response_preview": "**Start with a Modular Monolith.**\n\nFor a team of 5 developers building a *new* e-commerce platform, a full microservices architecture is almost certainly the wrong choice, while a traditional \"big ba"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 776.92,
+        "error": "The read operation timed out",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 34.6,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of **5 developers**, the clear recommendation is to start with a **Modular Monolith**.\n\nHere is the reasoning behind this choice, along with the specific "
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 25.73,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 43.1,
+        "error": null,
+        "response_preview": "**Answer:** Start with a **Modular Monolith**.\n\n**Reasoning:**\nFor a team of 5 developers building a *new* e-commerce platform, a monolith is the superior starting point **because** the operational ov"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 25.85,
+        "error": null,
+        "response_preview": "We should use a monolith for this new e-commerce platform with 5 developers, because a small team of 5 developers is better suited to the simplicity, faster development speed, and lower operational ov"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 10,
+        "compliant": 1,
+        "latency_s": 40.61,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the best choice is to start with a **Modular Monolith**.\n\nHere is the reasoning behind this recommendation, along with the specific strat"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 25.36,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 26.02,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 6.17,
+        "error": null,
+        "response_preview": "We should use a monolith for this new e-commerce platform with 5 developers because the team size is small, which makes coordination overhead low, and a monolith simplifies development, deployment, an"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 27.99,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, you should start with a **Modular Monolith**.\n\n**Reasoning:**\n\nThe primary reason is **team size and cognitive load**. A team of 5 develo"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 26.08,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 31.64,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, you should start with a **monolith** (specifically a well-structured **modular monolith**).\n\n**Reasoning:**\nThe primary reason is that a "
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 25.99,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 24.13,
+        "error": null,
+        "response_preview": "We should use a monolith for a new e-commerce platform with 5 developers because a small team of 5 developers is best served by a simpler architecture that minimizes operational overhead, cognitive lo"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 25.47,
+        "error": null,
+        "response_preview": "For a new e-commerce platform built by a team of 5 developers, the clear recommendation is to start with a **monolith**—specifically, a well-structured **modular monolith**.\n\n**Reasoning:**\n\n1. **Team"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 36.63,
+        "error": null,
+        "response_preview": "**Recommendation: Start with a well-structured Monolith (specifically a Modular Monolith).**\n\nHere is the reasoning for this decision, considering your specific constraints.\n\n### 1. Team Size and Cogn"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 31.39,
+        "error": null,
+        "response_preview": "The short answer is **no**, it is extremely unlikely that quantum computing will make current encryption (like RSA and ECC) technically obsolete within the next 5 years. The consensus among leading ex"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 40.5,
+        "error": null,
+        "response_preview": "The short answer is **no, it is highly unlikely that quantum computing will make *all* current encryption obsolete within 5 years.** However, the situation is nuanced, and the threat is serious enough"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 13.4,
+        "error": null,
+        "response_preview": "No, quantum computing will not make current encryption obsolete within 5 years. Here is the reasoning:\n\n- **Current quantum computers** are far from the scale needed to break widely used encryption (e"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 8.35,
+        "error": null,
+        "response_preview": "It is highly unlikely that quantum computing will make current encryption obsolete within 5 years. While quantum computers pose a theoretical threat to widely used public-key cryptography (such as RSA"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 31.7,
+        "error": null,
+        "response_preview": "The short answer is **no, almost certainly not within 5 years.** \n\nHowever, the nuance is critical: while the *algorithms* won't be broken by a quantum computer in that timeframe, the *migration* to q"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 51.49,
+        "error": null,
+        "response_preview": "The short answer is **no, almost certainly not within 5 years**—but the situation is more nuanced than a simple yes or no. Here is the breakdown of why the timeline is too short for a full break, yet "
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 9.61,
+        "error": null,
+        "response_preview": "No, quantum computing will not make current encryption obsolete within 5 years. Here is the reasoning:\n\n- **Current quantum computers are not powerful enough**: Today's quantum computers have only a f"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 32.41,
+        "error": null,
+        "response_preview": "No, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the breakdown of why, based on the current consensus among cryptographers and qu"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 31.11,
+        "error": null,
+        "response_preview": "No, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the breakdown of why, based on the current consensus among cryptographers and qu"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 39.97,
+        "error": null,
+        "response_preview": "No, it is extremely unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the detailed breakdown of why, along with the critical nuances that make this"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 28.34,
+        "error": null,
+        "response_preview": "The short answer is **no, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years.**\n\nWhile the threat is very real in the long term, the consensus a"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 50.08,
+        "error": null,
+        "response_preview": "The short answer is **no**, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years. However, the nuance is critical, and the threat is serious enoug"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 60.99,
+        "error": null,
+        "response_preview": "The short answer is **no**—it is extremely unlikely that a quantum computer will be able to break current encryption (like RSA or ECC) in real time within the next 5 years. However, the nuance is crit"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 47.7,
+        "error": null,
+        "response_preview": "No, it is highly unlikely that quantum computing will make current encryption obsolete **within the next 5 years**. The consensus among leading experts, government agencies (like NIST and the NSA), an"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 33.73,
+        "error": null,
+        "response_preview": "No, it is extremely unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the breakdown of why, based on the current scientific consensus and industry "
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 32.33,
+        "error": null,
+        "response_preview": "No, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the breakdown of why, based on the current consensus among cryptographers and qu"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 33.1,
+        "error": null,
+        "response_preview": "The short answer is **no, almost certainly not**. The consensus among leading cryptographers, physicists, and organizations like NIST is that a \"cryptographically relevant quantum computer\" (CRQC) cap"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 31.29,
+        "error": null,
+        "response_preview": "No, it is highly unlikely that quantum computing will make current encryption obsolete within the next 5 years. Here is the breakdown of why, based on the current consensus among cryptographers and qu"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 9.35,
+        "error": null,
+        "response_preview": "No, quantum computing will not make current encryption obsolete within 5 years. While quantum computers pose a theoretical threat to widely-used public-key cryptography (like RSA and ECC) via algorith"
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 48.01,
+        "error": null,
+        "response_preview": "No, it is extremely unlikely that quantum computing will make current encryption obsolete within the next 5 years. While the long-term threat is very real, the consensus among experts in quantum compu"
+      }
+    ]
+  }
+}
