@@ -130,6 +130,84 @@ def embed_in_record(reg_hash: str, record: dict) -> dict:
     return record
 
 
+def embed_in_existing_data(data_path: str | Path,
+                          reg_hash: str,
+                          output_path: str | Path = "") -> dict:
+    """Embed pre-registration hash into every record in existing data.
+    Does NOT require API access — validates the embed→store→verify pipeline
+    against collected trial data.
+
+    Returns: {output, records_embedded, hash}
+    """
+    data_path = Path(data_path)
+    data = json.loads(data_path.read_text(encoding="utf-8"))
+    registry = _load_registry()
+    entry = registry.get(reg_hash, {})
+    record_block = {
+        "pre_reg_hash": reg_hash,
+        "pre_reg_experiment": entry.get("experiment_name", ""),
+        "pre_reg_timestamp": entry.get("timestamp", ""),
+    }
+
+    embedded = 0
+    items = data if isinstance(data, list) else data.get("trials", data.get("results", []))
+    for item in items:
+        if isinstance(item, dict):
+            item.update(record_block)
+            embedded += 1
+
+    # Also embed at top level for aggregate files
+    if isinstance(data, dict):
+        data["pre_registration"] = record_block
+
+    output = Path(output_path) if output_path else data_path.with_suffix(".embedded.json")
+    output.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    return {"output": str(output), "records_embedded": embedded, "hash": reg_hash}
+
+
+def verify_embedded_records(data_path: str | Path, reg_hash: str = "") -> dict:
+    """Verify all records in data file contain pre-registration hash.
+    If reg_hash provided: also checks all hashes match (strict mode).
+
+    Returns: {verified, total, has_hash, missing, wrong_hash, hash_found}
+    """
+    data_path = Path(data_path)
+    data = json.loads(data_path.read_text(encoding="utf-8"))
+    items = data if isinstance(data, list) else data.get("trials", data.get("results", []))
+    total = 0
+    has_hash = 0
+    missing = 0
+    wrong_hash = 0
+    hashes_found = set()
+
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        total += 1
+        h = item.get("pre_reg_hash", "")
+        if h:
+            has_hash += 1
+            hashes_found.add(h)
+            if reg_hash and h != reg_hash:
+                wrong_hash += 1
+        else:
+            missing += 1
+
+    result = {
+        "verified": missing == 0 and wrong_hash == 0,
+        "total": total,
+        "has_hash": has_hash,
+        "missing": missing,
+        "wrong_hash": wrong_hash,
+        "hashes_found": sorted(hashes_found),
+    }
+    if reg_hash:
+        result["hash_match"] = reg_hash in hashes_found
+        result["hash_uniform"] = len(hashes_found) == 1 and reg_hash in hashes_found
+    return result
+
+
 def export_devto_comment(reg_hash: str) -> str:
     """Generate DEV.to comment template for public timestamp."""
     registry = _load_registry()
@@ -195,6 +273,15 @@ if __name__ == "__main__":
     e = sp.add_parser("export", help="Export DEV.to comment")
     e.add_argument("--hash", required=True)
 
+    em = sp.add_parser("embed", help="Embed hash into existing trial data")
+    em.add_argument("--data", required=True)
+    em.add_argument("--hash", required=True)
+    em.add_argument("--output", default="")
+
+    ch = sp.add_parser("check-embedded", help="Verify all records contain hash")
+    ch.add_argument("--data", required=True)
+    ch.add_argument("--hash", default="")
+
     a = p.parse_args()
 
     if a.cmd == "list":
@@ -213,5 +300,24 @@ if __name__ == "__main__":
         print("VERIFIED" if r["match"] else f"MISMATCH: {r.get('error')}")
     elif a.cmd == "export":
         print(export_devto_comment(a.hash))
+    elif a.cmd == "embed":
+        r = embed_in_existing_data(a.data, a.hash, a.output)
+        print(f"Embedded {r['records_embedded']} records with hash {r['hash']}")
+        print(f"Output: {r['output']}")
+    elif a.cmd == "check-embedded":
+        r = verify_embedded_records(a.data, a.hash)
+        status = "ALL VERIFIED" if r["verified"] else "FAILED"
+        detail = f"({r['has_hash']}/{r['total']} have hash"
+        if r["missing"]:
+            detail += f", {r['missing']} MISSING"
+        if r["wrong_hash"]:
+            detail += f", {r['wrong_hash']} WRONG HASH"
+        detail += ")"
+        print(f"{status} {detail}")
+        if a.hash:
+            print(f"Hash match: {'YES' if r.get('hash_match') else 'NO'}")
+            print(f"Hash uniform: {'YES' if r.get('hash_uniform') else 'NO — multiple hashes found'}")
+        if r["hashes_found"] and not (a.hash and r.get("hash_uniform")):
+            print(f"Hash(es) found: {', '.join(r['hashes_found'])}")
     else:
         p.print_help()
