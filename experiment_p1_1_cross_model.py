@@ -19,9 +19,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # ── Config ─────────────────────────────────────────────────────────────────
-SF_API_KEY = "sk-wmyiztvtwpsxcxxwkzfrruzokqsctwyvqciinqehhnllclmp"
+SF_API_KEY = "sk-tksxbavsitqvkuskfiigkczcuqujwwzneswvjxchrnjqfoca"
 SF_BASE_URL = "https://api.siliconflow.cn/v1"
-MODELS = ["Qwen/Qwen3.6-35B-A3B", "deepseek-ai/DeepSeek-V4-Flash"]
+MODELS = ["Qwen/Qwen3.5-27B", "deepseek-ai/DeepSeek-V4-Flash"]
 TRIALS_PER_TASK = 20
 TEMPERATURE = 0.0
 MAX_TOKENS = 1024
