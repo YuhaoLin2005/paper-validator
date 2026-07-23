@@ -1,0 +1,970 @@
+{
+  "experiment": "e1_persona_decorrelation",
+  "pre_reg_hash": "eebe2a31fb290860",
+  "n_trials": 30,
+  "n_errors": 0,
+  "total_tokens": 21853,
+  "agreement": {
+    "within_model_diff_persona": {
+      "n": 30,
+      "rate": 0.8666666666666667
+    },
+    "across_model_same_persona": {
+      "n": 15,
+      "rate": 1.0
+    },
+    "within_both": {
+      "n": 0,
+      "rate": 0
+    },
+    "across_both": {
+      "n": 30,
+      "rate": 0.8666666666666667
+    }
+  },
+  "interpretation": "Persona drives judgment: cross-model same-persona (1.00) > same-model diff-persona (0.87). Expert board IS genuinely independent across architectures.",
+  "results": [
+    {
+      "trial_id": 1,
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "O(n^2) time complexity when O(n) is possible with a hash set",
+          "Unnecessary linear search (items[i] not in result) adds O(n) per append, making worst-case O(n^3)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 1,
+        "score_maintainability": 3,
+        "key_observation": "Use a set to track seen items and another to collect duplicates, reducing to O(n) time and O(n) space."
+      },
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 128,
+        "total_tokens": 406,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 22
+      }
+    },
+    {
+      "trial_id": 2,
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "O(n^2) pairwise scan instead of O(n) hash-based duplicate detection",
+          "Linear 'not in result' membership check inside the inner loop compounds cost",
+          "Performance degrades rapidly as input size grows"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 1,
+        "score_maintainability": 3,
+        "key_observation": "This is an O(n^2) brute-force duplicate finder with an additional linear membership scan, which should be replaced by a single pass using a set or Counter."
+      },
+      "usage": {
+        "prompt_tokens": 278,
+        "completion_tokens": 569,
+        "total_tokens": 847,
+        "completion_tokens_details": {
+          "reasoning_tokens": 439
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 278
+      }
+    },
+    {
+      "trial_id": 3,
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "O(n^2) time complexity is unacceptable for large inputs; use a set or hash map instead",
+          "Inefficient linear search in result list (items[i] not in result) adds O(n) per duplicate, making worst-case O(n^3)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 1,
+        "score_maintainability": 3,
+        "key_observation": "This brute-force O(n^2) algorithm with an additional O(n) membership check is needlessly slow; a single pass with a set to track seen items would be O(n) and obviously correct."
+      },
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 151,
+        "total_tokens": 438,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 31
+      }
+    },
+    {
+      "trial_id": 4,
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Using a list for 'result' forces O(n) membership checks, compounding the nested loops into roughly O(n^3) behavior.",
+          "The data structure choice does not match the problem: duplicate detection should use a set for O(1) lookups, yielding an O(n) solution."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 1,
+        "score_maintainability": 2,
+        "key_observation": "The algorithm is correct in spirit but uses the wrong data structures, making it unnecessarily cubic and hard to scale."
+      },
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 589,
+        "total_tokens": 876,
+        "completion_tokens_details": {
+          "reasoning_tokens": 453
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 287
+      }
+    },
+    {
+      "trial_id": 5,
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Quadratic time complexity O(n^2) for a problem solvable in O(n) with a hash set",
+          "Redundant check 'items[i] not in result' adds another O(n) factor, making worst-case O(n^3)",
+          "No handling of unhashable types; algorithm assumes equality comparison works but fails for non-comparable items"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 1,
+        "score_maintainability": 2,
+        "key_observation": "The algorithm's nested loops and linear membership test yield cubic worst-case time, ignoring the obvious linear-time solution using a set."
+      },
+      "usage": {
+        "prompt_tokens": 266,
+        "completion_tokens": 153,
+        "total_tokens": 419,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 10
+      }
+    },
+    {
+      "trial_id": 6,
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_quadratic",
+      "domain": "performance",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Cubic time complexity: nested O(n²) pairwise comparison plus an O(n) `not in result` scan",
+          "Algorithm chosen without complexity analysis or justification; a set/Counter or sort-based approach is asymptotically superior",
+          "Unstated invariants and undocumented ordering of returned duplicates"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 1,
+        "score_maintainability": 2,
+        "key_observation": "The nested pairwise scan yields O(n³) time because `items[i] not in result` is a linear search, and a set- or sort-based approach would be clearer and asymptotically faster."
+      },
+      "usage": {
+        "prompt_tokens": 270,
+        "completion_tokens": 926,
+        "total_tokens": 1196,
+        "completion_tokens_details": {
+          "reasoning_tokens": 771
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 270
+      }
+    },
+    {
+      "trial_id": 7,
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Simple and correct, but the double default-to-0 logic is redundant; a single coalesce in the query would be cleaner."
+      },
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 87,
+        "total_tokens": 369,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 26
+      }
+    },
+    {
+      "trial_id": 8,
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Direct and efficient, but returning 0 for both a missing user and a NULL age conflates distinct cases and may surprise callers if 0 is a valid age."
+      },
+      "usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 391,
+        "total_tokens": 674,
+        "completion_tokens_details": {
+          "reasoning_tokens": 299
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 283
+      }
+    },
+    {
+      "trial_id": 9,
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Returning 0 for missing user or missing age conflates 'no data' with 'age 0', which is a semantic error that can cause silent data corruption downstream"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Silently returning 0 for missing data is a bug; the function should raise an exception or return None to distinguish 'no user' from 'age 0'."
+      },
+      "usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 124,
+        "total_tokens": 415,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 35
+      }
+    },
+    {
+      "trial_id": 10,
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Returns 0 for both a missing user and a NULL age, conflating three different cases (user not found, age unknown, and a legitimate age of zero) into one magic sentinel.",
+          "int(age) will throw an unhandled exception if the database value is non-numeric, an empty string, or otherwise malformed.",
+          "Database query failures are not caught or propagated, so a broken connection can crash the caller unexpectedly.",
+          "Assumes db.query returns a dict-like object with a .get() method; if it returns a list, tuple, or custom row type the code will fail.",
+          "The API contract is undocumented: callers cannot tell whether 0 means 'no user', 'no age', or an actual age of zero."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The function collapses 'user missing', 'age unknown', and a real age of zero into the same sentinel value and leaves database and parsing errors unhandled, making the API contract ambiguous and brittle."
+      },
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 799,
+        "total_tokens": 1091,
+        "completion_tokens_details": {
+          "reasoning_tokens": 554
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 228
+      }
+    },
+    {
+      "trial_id": 11,
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Returning 0 for missing user or age conflates 'not found' with 'age 0', which may hide data errors; consider raising an exception or returning None."
+      },
+      "usage": {
+        "prompt_tokens": 270,
+        "completion_tokens": 96,
+        "total_tokens": 366,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 14
+      }
+    },
+    {
+      "trial_id": 12,
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "error_silent",
+      "domain": "error_handling",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Returns 0 as a sentinel for both a missing user and a missing age, conflating absence with a valid age.",
+          "No handling for int(age) raising ValueError on malformed data.",
+          "Unstated invariants about db.query return type and the users schema."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "The function silently collapses a missing user, a missing age, and a possible conversion failure into the sentinel 0, making the return value semantically ambiguous."
+      },
+      "usage": {
+        "prompt_tokens": 275,
+        "completion_tokens": 660,
+        "total_tokens": 935,
+        "completion_tokens_details": {
+          "reasoning_tokens": 513
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 275
+      }
+    },
+    {
+      "trial_id": 13,
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is correct and simple, but the loop for summing days could be replaced with a prefix sum array for constant-time day-of-year lookup if called frequently."
+      },
+      "usage": {
+        "prompt_tokens": 340,
+        "completion_tokens": 93,
+        "total_tokens": 433,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 84
+      }
+    },
+    {
+      "trial_id": 14,
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "A direct, correct day-of-year calculation, but it rebuilds the month-length list and loops every call when a small precomputed cumulative-day table would be faster and simpler."
+      },
+      "usage": {
+        "prompt_tokens": 340,
+        "completion_tokens": 470,
+        "total_tokens": 810,
+        "completion_tokens_details": {
+          "reasoning_tokens": 377
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 340
+      }
+    },
+    {
+      "trial_id": 15,
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Function is correct and clear, but could benefit from a docstring and more descriptive parameter names for readability."
+      },
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 81,
+        "total_tokens": 430,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 93
+      }
+    },
+    {
+      "trial_id": 16,
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Function and parameter names (`process`, `d`, `m`, `y`, `a`) are cryptic; the API is not self-documenting.",
+          "No docstring, type hints, or stated contract, so callers cannot know valid inputs, calendar assumptions, or the meaning of the `-1` sentinel.",
+          "No validation of `y` (e.g., negative years, year zero, non-integers), which makes behavior outside the typical Gregorian range undefined.",
+          "Magic month-length constants and the leap-year rule are inline rather than named, hurting maintainability.",
+          "Returning `-1` for errors is fragile; raising a clear exception would be safer for callers."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The day-of-year logic is correct for valid Gregorian dates, but the function's opaque naming, missing contract, and weak error handling make it neither obviously correct nor robust."
+      },
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 1346,
+        "total_tokens": 1695,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1119
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 349
+      }
+    },
+    {
+      "trial_id": 17,
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 3,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The algorithm is correct and efficient, but the variable names and lack of comments obscure intent, and the leap year logic could be extracted for clarity."
+      },
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 90,
+        "total_tokens": 418,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 72
+      }
+    },
+    {
+      "trial_id": 18,
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "naming_obfuscated",
+      "domain": "readability",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 3,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "The algorithm is mathematically correct for Gregorian day-of-year, but terse identifiers and an uncommented month-length table obscure intent and invariants."
+      },
+      "usage": {
+        "prompt_tokens": 332,
+        "completion_tokens": 616,
+        "total_tokens": 948,
+        "completion_tokens_details": {
+          "reasoning_tokens": 530
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 332
+      }
+    },
+    {
+      "trial_id": 19,
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Infinite loop when target is greater than all elements: left = mid does not progress when left+1 == right, causing endless loop. Also fails to find target at index 0 when arr[0] < target due to left not moving past 0."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "Standard binary search uses left = mid+1 and right = mid-1 to avoid infinite loops and off-by-one errors."
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 134,
+        "total_tokens": 428,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 38
+      }
+    },
+    {
+      "trial_id": 20,
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "left = mid can cause an infinite loop when arr[mid] < target; it should be left = mid + 1"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The search can hang forever because the left pointer does not always advance."
+      },
+      "usage": {
+        "prompt_tokens": 295,
+        "completion_tokens": 442,
+        "total_tokens": 737,
+        "completion_tokens_details": {
+          "reasoning_tokens": 349
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 295
+      }
+    },
+    {
+      "trial_id": 21,
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Infinite loop when target is greater than all elements because left = mid does not progress when left+1 == right"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "left = mid can cause infinite loop; should be left = mid + 1 to ensure progress."
+      },
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 99,
+        "total_tokens": 402,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 47
+      }
+    },
+    {
+      "trial_id": 22,
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "The `left = mid` branch does not advance `left` when `left + 1 == right`, causing an infinite loop for targets greater than any element.",
+          "No validation that `arr` is not None or that it is sorted, which silently produces wrong results."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The `left = mid` branch fails to shrink the interval when `left + 1 == right`, causing an infinite loop on missing targets greater than the final element."
+      },
+      "usage": {
+        "prompt_tokens": 304,
+        "completion_tokens": 481,
+        "total_tokens": 785,
+        "completion_tokens_details": {
+          "reasoning_tokens": 337
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 240
+      }
+    },
+    {
+      "trial_id": 23,
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Infinite loop when target is greater than all elements: left = mid does not progress when left+1 == right, causing left < right to remain true forever. Also, left = mid can skip over the target if mid is the last occurrence before right."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "The loop invariant is broken because left = mid fails to shrink the interval when left and right are adjacent, leading to an infinite loop for missing large targets."
+      },
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 140,
+        "total_tokens": 422,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 26
+      }
+    },
+    {
+      "trial_id": 24,
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "offbyone_boundary",
+      "domain": "correctness",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "When arr[mid] < target, setting left = mid fails to shrink the interval if mid == left, causing an infinite loop for targets greater than or equal to the rightmost element.",
+          "The half-open interval invariant [left, right) is never stated, so the boundary-update logic cannot be verified by the reader.",
+          "There is no precondition that arr is sorted, no docstring, and no handling of empty or invalid inputs."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "The search can loop forever because the left boundary is allowed to stay at mid instead of advancing past it, violating the fundamental invariant that each iteration must strictly reduce the search interval."
+      },
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 733,
+        "total_tokens": 1020,
+        "completion_tokens_details": {
+          "reasoning_tokens": 556
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 287
+      }
+    },
+    {
+      "trial_id": 25,
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transaction or rollback: stock deduction and payment are not atomic, risking partial state on failure",
+          "Multiple database round-trips per item in loops (get_stock, deduct_stock) – should batch or use single query",
+          "Payment charge occurs before stock deduction, but if deduct fails or crashes, money is taken without order completion"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 2,
+        "score_maintainability": 3,
+        "key_observation": "Missing transactional integrity and excessive per-item database calls make this code fragile and slow under load."
+      },
+      "usage": {
+        "prompt_tokens": 446,
+        "completion_tokens": 148,
+        "total_tokens": 594,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 62
+      }
+    },
+    {
+      "trial_id": 26,
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Uses client-supplied item prices as the source of truth, allowing price tampering",
+          "Stock check and deduction are separate, non-atomic operations, creating a race condition that can lead to overselling",
+          "Payment is charged before stock is reserved, so a deduction failure results in a charged customer with no inventory",
+          "No transactional boundary across payment, stock, and notifications, so partial failures leave the system inconsistent",
+          "Returns error dictionaries instead of raising exceptions, mixing error handling styles"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The code is direct and readable, but it trusts client data and lacks atomicity, making it incorrect and unsafe for order processing."
+      },
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 688,
+        "total_tokens": 1122,
+        "completion_tokens_details": {
+          "reasoning_tokens": 511
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 434
+      }
+    },
+    {
+      "trial_id": 27,
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transaction or rollback: stock deduction and payment are not atomic; payment succeeds but stock deduction could fail, leading to inconsistency.",
+          "Discount code applied without verifying it belongs to user or order context; no check if discount is expired or already used.",
+          "No validation of shipping_addr; could be malformed or missing.",
+          "Silent error swallowing: db.get_discount returns None but code proceeds with total unchanged; should raise or handle explicitly.",
+          "Race condition: stock check and deduction are separate operations without locking, allowing overselling."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The function lacks transactional integrity and proper error handling, making it unsafe for production use."
+      },
+      "usage": {
+        "prompt_tokens": 455,
+        "completion_tokens": 187,
+        "total_tokens": 642,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 71
+      }
+    },
+    {
+      "trial_id": 28,
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Inconsistent error handling: raises ValueError for empty items but returns error dicts for stock and payment failures.",
+          "Race condition between stock availability check and deduction; inventory can change after the check and before payment or deduction.",
+          "Payment is charged before stock is deducted with no rollback mechanism if deduction fails.",
+          "Item fields (sku, qty, price) and discount structure are used without validation.",
+          "No transaction boundary or order record is created, and shipping_addr is accepted but never used."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The function mixes exceptions and error dicts, charges payment before guaranteeing stock, and lacks atomicity and input validation, making it unsafe for production."
+      },
+      "usage": {
+        "prompt_tokens": 443,
+        "completion_tokens": 779,
+        "total_tokens": 1222,
+        "completion_tokens_details": {
+          "reasoning_tokens": 598
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 443
+      }
+    },
+    {
+      "trial_id": 29,
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transaction or rollback: stock deduction and payment are not atomic, risking partial updates on failure",
+          "Race condition: stock check and deduction are not locked, allowing overselling under concurrency",
+          "Discount code validation lacks expiry or usage limit checks beyond 'valid' flag",
+          "Payment charge occurs before stock deduction, but if deduction fails (e.g., DB error), payment is already taken"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The function lacks transactional integrity and concurrency control, making it unsafe for production order processing."
+      },
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 159,
+        "total_tokens": 593,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 50
+      }
+    },
+    {
+      "trial_id": 30,
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "god_function",
+      "domain": "architecture",
+      "pre_reg_hash": "eebe2a31fb290860",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transactional boundary: stock checks, payment, and stock deduction are separate, non-atomic steps, permitting race conditions and inconsistent state.",
+          "Prices are taken from client-supplied item dictionaries and multiplied with floating-point arithmetic, inviting fraud and rounding errors.",
+          "No validation of item structure, quantities, prices, or discount bounds; malformed input can raise unhandled exceptions or produce negative totals.",
+          "Return values mix success dictionaries with error dictionaries, obscuring control flow and making error handling fragile.",
+          "Single-letter variable names (d, i) and an unused shipping_addr parameter hide intent and weaken readability."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "The function entangles ordering, charging, and fulfillment without atomicity, input validation, or reliable pricing, so it can lose money, oversell stock, and leave orders in inconsistent states."
+      },
+      "usage": {
+        "prompt_tokens": 426,
+        "completion_tokens": 694,
+        "total_tokens": 1120,
+        "completion_tokens_details": {
+          "reasoning_tokens": 482
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 426
+      }
+    }
+  ]
+}

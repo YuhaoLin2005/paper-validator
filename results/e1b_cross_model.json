@@ -1,0 +1,3580 @@
+{
+  "experiment": "e1b_cross_model",
+  "pre_reg_hash": "9c80bad72382d8c4",
+  "n_snippets": 14,
+  "n_trials": 112,
+  "n_errors": 0,
+  "total_tokens": 81717,
+  "models": [
+    "deepseek-ai/DeepSeek-V4-Pro",
+    "moonshotai/Kimi-K2.7-Code"
+  ],
+  "snippet_ids": [
+    "arch_strategy_pattern",
+    "err_null_vs_optional",
+    "err_partial_success",
+    "api_config_in_code",
+    "api_method_chaining",
+    "api_boolean_params",
+    "perf_cache_everything",
+    "perf_regex_compiled",
+    "arch_service_layer",
+    "test_private_methods",
+    "test_snapshot_vs_assert",
+    "type_cast_vs_validate",
+    "concurrency_optimistic_lock",
+    "config_env_vs_file"
+  ],
+  "categories": [
+    "APPROVE",
+    "APPROVE_WITH_NOTES",
+    "PARSE_ERROR",
+    "REJECT"
+  ],
+  "fleiss_kappa": {
+    "persona_6raters": {
+      "kappa": 0.0491,
+      "ci95_lower": -0.0458,
+      "ci95_upper": 0.1105,
+      "n_subjects": 14
+    },
+    "ds_3personas": {
+      "kappa": -0.2014,
+      "ci95_lower": -0.334,
+      "ci95_upper": -0.0813,
+      "n_subjects": 14
+    },
+    "kimi_3personas": {
+      "kappa": 0.4597,
+      "ci95_lower": 0.1422,
+      "ci95_upper": 0.7241,
+      "n_subjects": 14
+    },
+    "control_2models": {
+      "kappa": -0.2923,
+      "ci95_lower": -0.4951,
+      "ci95_upper": -0.1667,
+      "n_subjects": 14
+    }
+  },
+  "cross_model_same_persona": {
+    "carmack": {
+      "agreement_rate": 0.3571,
+      "n_pairs": 14
+    },
+    "torvalds": {
+      "agreement_rate": 0.5714,
+      "n_pairs": 14
+    },
+    "knuth": {
+      "agreement_rate": 0.2857,
+      "n_pairs": 14
+    }
+  },
+  "within_model_diff_persona": {
+    "DS": {
+      "agreement_rate": 0.4048,
+      "n_pairs": 42
+    },
+    "Kimi": {
+      "agreement_rate": 0.6429,
+      "n_pairs": 42
+    }
+  },
+  "manipulation_check": {
+    "DS": {
+      "score_clarity": {
+        "control_avg": 3.93,
+        "persona_avg": 3.81,
+        "delta": -0.12
+      },
+      "score_correctness": {
+        "control_avg": 4.29,
+        "persona_avg": 3.76,
+        "delta": -0.52
+      },
+      "score_efficiency": {
+        "control_avg": 4.07,
+        "persona_avg": 4.14,
+        "delta": 0.07
+      },
+      "score_maintainability": {
+        "control_avg": 3.36,
+        "persona_avg": 3.48,
+        "delta": 0.12
+      }
+    },
+    "Kimi": {
+      "score_clarity": {
+        "control_avg": 3.75,
+        "persona_avg": 3.63,
+        "delta": -0.12
+      },
+      "score_correctness": {
+        "control_avg": 3.08,
+        "persona_avg": 2.97,
+        "delta": -0.11
+      },
+      "score_efficiency": {
+        "control_avg": 4.5,
+        "persona_avg": 4.11,
+        "delta": -0.39
+      },
+      "score_maintainability": {
+        "control_avg": 2.75,
+        "persona_avg": 2.91,
+        "delta": 0.16
+      }
+    }
+  },
+  "results": [
+    {
+      "trial_id": 1,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Simple if-else is fine for 3 fixed methods; a strategy pattern would add unnecessary abstraction and overhead."
+      },
+      "usage": {
+        "prompt_tokens": 335,
+        "completion_tokens": 78,
+        "total_tokens": 413,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 335
+      }
+    },
+    {
+      "trial_id": 2,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Direct if-elif dispatch is clear and appropriate for only three methods; if pay is a hot path, bind the handler in __init__ to avoid repeated string comparisons and dict lookups."
+      },
+      "usage": {
+        "prompt_tokens": 333,
+        "completion_tokens": 509,
+        "total_tokens": 842,
+        "completion_tokens_details": {
+          "reasoning_tokens": 414
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 333
+      }
+    },
+    {
+      "trial_id": 3,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for missing config keys",
+          "Silent failure if StripeAPI.charge returns None",
+          "Hard-coded method strings with no validation",
+          "Config dict access can raise KeyError"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "This code mixes configuration and dispatch logic, lacks proper error handling, and will break silently on missing config keys or API failures."
+      },
+      "usage": {
+        "prompt_tokens": 327,
+        "completion_tokens": 120,
+        "total_tokens": 447,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 327
+      }
+    },
+    {
+      "trial_id": 4,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Opaque config dict with method-specific keys risks KeyError and hides API requirements",
+          "No validation of amount or config before calling external APIs",
+          "External API failures propagate raw instead of being handled or translated",
+          "Adding a payment method requires modifying the class, violating open/closed principle"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The if-else dispatch is fine for three methods, but the real problem is the fragile data structure: an untyped config bag passed directly to unrelated APIs."
+      },
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 974,
+        "total_tokens": 1299,
+        "completion_tokens_details": {
+          "reasoning_tokens": 828
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 325
+      }
+    },
+    {
+      "trial_id": 5,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "For only three payment methods, the if-else chain is clear and correct, but the strategy pattern would better accommodate future growth without altering this class."
+      },
+      "usage": {
+        "prompt_tokens": 320,
+        "completion_tokens": 90,
+        "total_tokens": 410,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 320
+      }
+    },
+    {
+      "trial_id": 6,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Tight coupling to concrete APIs (StripeAPI, PayPalAPI, BankAPI) inside a single class",
+          "Magic strings for method selection and config keys with no validation or stated invariants",
+          "Violates the Open/Closed principle: adding a payment method requires modifying this class",
+          "No abstraction or interface for payment strategies; semantics are hidden behind generic names 'method' and 'config'"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "For only three methods the if-else chain is simple and sufficiently efficient, but it embeds concrete dependencies and unstated configuration invariants that will make extension and reasoning increasingly difficult."
+      },
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 1017,
+        "total_tokens": 1338,
+        "completion_tokens_details": {
+          "reasoning_tokens": 843
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 321
+      }
+    },
+    {
+      "trial_id": 7,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Simple, direct, and efficient; no unnecessary abstraction for a straightforward None return."
+      },
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 72,
+        "total_tokens": 345,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 273
+      }
+    },
+    {
+      "trial_id": 8,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Caller dereferences user.name without checking for None, causing a runtime AttributeError when no user is found.",
+          "Function returns None implicitly with no type hint or contract to warn callers."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Returning None for a missing record without an explicit Optional type or caller guard creates a surprise crash on the next line."
+      },
+      "usage": {
+        "prompt_tokens": 275,
+        "completion_tokens": 301,
+        "total_tokens": 576,
+        "completion_tokens_details": {
+          "reasoning_tokens": 187
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 211
+      }
+    },
+    {
+      "trial_id": 9,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Returning None is fine here, but the caller must handle the None case before accessing .name to avoid AttributeError."
+      },
+      "usage": {
+        "prompt_tokens": 265,
+        "completion_tokens": 84,
+        "total_tokens": 349,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 265
+      }
+    },
+    {
+      "trial_id": 10,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Caller dereferences user.name without checking for None, causing AttributeError when the user is missing.",
+          "Function returns None implicitly with no type hint or Optional annotation, making the contract unclear and easy to misuse.",
+          "No error handling for database execution failures."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Returning None for a missing record is acceptable, but the API must make that possibility obvious and every caller must handle it before use."
+      },
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 298,
+        "total_tokens": 565,
+        "completion_tokens_details": {
+          "reasoning_tokens": 167
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 267
+      }
+    },
+    {
+      "trial_id": 11,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is clear and correct, but the implicit None return could be made more explicit with an Optional return type annotation for better documentation."
+      },
+      "usage": {
+        "prompt_tokens": 258,
+        "completion_tokens": 87,
+        "total_tokens": 345,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 258
+      }
+    },
+    {
+      "trial_id": 12,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Caller dereferences user.name without checking for None, causing AttributeError when no user is found.",
+          "Function signature lacks type hints; the Optional[User] return type is unstated, hiding a critical contract.",
+          "No docstring or stated invariants for the None sentinel.",
+          "SELECT * is brittle and may fetch unnecessary columns; parameter binding style may not match the DB-API used."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Returning None to signal absence without an explicit Optional type and without a caller-side check makes this code a latent runtime failure."
+      },
+      "usage": {
+        "prompt_tokens": 263,
+        "completion_tokens": 403,
+        "total_tokens": 666,
+        "completion_tokens_details": {
+          "reasoning_tokens": 246
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 263
+      }
+    },
+    {
+      "trial_id": 13,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Simple, direct, no unnecessary abstraction, and handles partial failure correctly without over-engineering."
+      },
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 74,
+        "total_tokens": 386,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 312
+      }
+    },
+    {
+      "trial_id": 14,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Simple O(n) partial-upload loop with clear per-file error handling; just ensure callers expect partial success and check the 'ok' flag."
+      },
+      "usage": {
+        "prompt_tokens": 309,
+        "completion_tokens": 592,
+        "total_tokens": 901,
+        "completion_tokens_details": {
+          "reasoning_tokens": 506
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 245
+      }
+    },
+    {
+      "trial_id": 15,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function returns partial results on error, which is fine for batch uploads, but callers must check the 'ok' flag to detect failures."
+      },
+      "usage": {
+        "prompt_tokens": 304,
+        "completion_tokens": 91,
+        "total_tokens": 395,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 304
+      }
+    },
+    {
+      "trial_id": 16,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "No validation that file_paths is iterable or non-None; passing None raises an unhelpful TypeError.",
+          "Only StorageError is caught, so unexpected exceptions abort the loop and discard already-collected partial results.",
+          "No documented contract on whether partial success is acceptable, leaving callers to guess the semantics."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The partial-success design is reasonable but the function needs input validation, broader exception handling, and a clear contract to be obviously correct."
+      },
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 719,
+        "total_tokens": 1020,
+        "completion_tokens_details": {
+          "reasoning_tokens": 573
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 301
+      }
+    },
+    {
+      "trial_id": 17,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function correctly implements partial success semantics, but the 'ok' flag is misleading because it returns true only when no errors occur, which contradicts the partial success design."
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 94,
+        "total_tokens": 391,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 297
+      }
+    },
+    {
+      "trial_id": 18,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "The partial-success contract is unstated: there is no docstring, type annotation, or comment explaining whether callers should expect all-or-nothing behavior.",
+          "Only StorageError is caught, so any unexpected exception aborts the loop and loses the accumulated uploaded/errors state instead of returning it.",
+          "The key 'ok' hides semantics; a name such as 'all_succeeded' would make the invariant explicit.",
+          "No justification or complexity analysis is given for the sequential O(n) upload strategy."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The function silently commits to partial success without documenting that contract, and it lets unhandled exceptions escape, discarding whatever progress had been recorded."
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 1210,
+        "total_tokens": 1507,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1025
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 233
+      }
+    },
+    {
+      "trial_id": 19,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Hardcoded defaults are fine for a simple policy, but consider making them configurable via constructor injection for reuse across different services."
+      },
+      "usage": {
+        "prompt_tokens": 342,
+        "completion_tokens": 86,
+        "total_tokens": 428,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 342
+      }
+    },
+    {
+      "trial_id": 20,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "The hardcoded class constants keep the retry policy simple and fast, but they prevent runtime customization without subclassing or code changes."
+      },
+      "usage": {
+        "prompt_tokens": 326,
+        "completion_tokens": 404,
+        "total_tokens": 730,
+        "completion_tokens_details": {
+          "reasoning_tokens": 321
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 326
+      }
+    },
+    {
+      "trial_id": 21,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Hardcoded configuration prevents reuse and testing; should be injected via constructor",
+          "Missing delay calculation and backoff logic despite naming and constants suggesting it",
+          "should_retry ignores BASE_DELAY_MS, MAX_DELAY_MS, BACKOFF_MULTIPLIER — dead code or incomplete design"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Class constants masquerade as configuration but are unused in actual retry logic, making the API misleading and inflexible."
+      },
+      "usage": {
+        "prompt_tokens": 334,
+        "completion_tokens": 143,
+        "total_tokens": 477,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 334
+      }
+    },
+    {
+      "trial_id": 22,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Hardcoded constants make the policy impossible to configure per environment or caller; inject these values via __init__ or function arguments.",
+          "No validation of status_code or attempt, so None or unexpected types can cause silent or confusing failures.",
+          "Class-level mutable state (RETRYABLE_STATUSES) is shared globally and can be accidentally mutated, causing spooky action at a distance."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The code works for a single fixed policy but fails the test of obvious correctness and good data structure design because it bakes configuration into class-level globals instead of accepting it as data."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 698,
+        "total_tokens": 1016,
+        "completion_tokens_details": {
+          "reasoning_tokens": 533
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 254
+      }
+    },
+    {
+      "trial_id": 23,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The class mixes configuration defaults with policy logic, making it rigid for different contexts without injection."
+      },
+      "usage": {
+        "prompt_tokens": 327,
+        "completion_tokens": 78,
+        "total_tokens": 405,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 327
+      }
+    },
+    {
+      "trial_id": 24,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Hardcoded constants prevent environment-specific tuning and testing; configuration should be injected via constructor or parameters.",
+          "The semantics of `attempt` (zero-based attempts made vs. one-based attempt number) are unstated, creating an off-by-one risk.",
+          "Delay-related constants are declared but no delay computation is implemented, leaving the policy incomplete.",
+          "No documentation, complexity analysis, or justification for the chosen retryable statuses and backoff parameters."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The class embeds fixed magic numbers with an unstated `attempt` convention and omits the delay logic implied by its own constants, undermining both correctness and maintainability."
+      },
+      "usage": {
+        "prompt_tokens": 314,
+        "completion_tokens": 1509,
+        "total_tokens": 1823,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1333
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 314
+      }
+    },
+    {
+      "trial_id": 25,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Method chaining is fine here but ensure the builder doesn't allocate intermediate objects or copy data unnecessarily in hot paths."
+      },
+      "usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 83,
+        "total_tokens": 374,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 291
+      }
+    },
+    {
+      "trial_id": 26,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "Fluent chaining reads well but adds intermediate allocations and makes debugging intermediate state harder; prefer explicit steps or a direct query in hot paths."
+      },
+      "usage": {
+        "prompt_tokens": 288,
+        "completion_tokens": 739,
+        "total_tokens": 1027,
+        "completion_tokens_details": {
+          "reasoning_tokens": 655
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 288
+      }
+    },
+    {
+      "trial_id": 27,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Clean fluent interface, but missing error handling for potential None returns from intermediate methods."
+      },
+      "usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 76,
+        "total_tokens": 359,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 283
+      }
+    },
+    {
+      "trial_id": 28,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Variable 'query' is assigned the result of .execute(), not the query builder, which is misleading",
+          "No error handling around .execute() and no validation of 'thirty_days_ago'",
+          "Repeated .where() calls rely on builder mutability/return semantics that are not visible here"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Fluent query builders are fine, but naming the result 'query' and omitting error handling makes the code less obviously correct than it looks."
+      },
+      "usage": {
+        "prompt_tokens": 280,
+        "completion_tokens": 1056,
+        "total_tokens": 1336,
+        "completion_tokens_details": {
+          "reasoning_tokens": 910
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 280
+      }
+    },
+    {
+      "trial_id": 29,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Method chaining here is clean and expressive, but the code lacks explicit error handling and assumes the query builder handles parameter binding safely."
+      },
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 82,
+        "total_tokens": 358,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 276
+      }
+    },
+    {
+      "trial_id": 30,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Variable name 'query' hides that the final value is the result of execute(), not a query object",
+          "Fluent interface obscures whether methods mutate state or return new objects; invariants are unstated",
+          "No complexity analysis or justification for choosing a chained builder over explicit steps"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "The fluent interface reads well, but the variable name 'query' and the absence of stated invariants about mutability and return types let the code say less than it means."
+      },
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 761,
+        "total_tokens": 1037,
+        "completion_tokens_details": {
+          "reasoning_tokens": 612
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 276
+      }
+    },
+    {
+      "trial_id": 31,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Direct and efficient, but consider using a parameterized IN clause with proper SQL placeholder expansion for safety and performance."
+      },
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 82,
+        "total_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 317
+      }
+    },
+    {
+      "trial_id": 32,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 305,
+        "completion_tokens": 978,
+        "total_tokens": 1283,
+        "completion_tokens_details": {
+          "reasoning_tokens": 867
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 305
+      }
+    },
+    {
+      "trial_id": 33,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Boolean flags for filtering create combinatorial explosion and unclear API; better to accept a list of statuses explicitly",
+          "SQL injection risk: statuses list is directly interpolated into query without parameterization for IN clause"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Boolean flags are a code smell that obscure data flow and invite bugs; pass a list of statuses instead."
+      },
+      "usage": {
+        "prompt_tokens": 309,
+        "completion_tokens": 119,
+        "total_tokens": 428,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 309
+      }
+    },
+    {
+      "trial_id": 34,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 835,
+        "total_tokens": 1132,
+        "completion_tokens_details": {
+          "reasoning_tokens": 670
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 297
+      }
+    },
+    {
+      "trial_id": 35,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Boolean flags are acceptable here for a small, stable set of statuses, but consider using a set or enum for clarity if the status list grows."
+      },
+      "usage": {
+        "prompt_tokens": 302,
+        "completion_tokens": 98,
+        "total_tokens": 400,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 302
+      }
+    },
+    {
+      "trial_id": 36,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Boolean flags obscure call-site intent and invite a combinatorial explosion of hidden states",
+          "The always-included 'completed' and 'shipped' statuses are an unstated, hard-coded invariant",
+          "SELECT * hides the actual data contract and retrieves unnecessary columns",
+          "No docstring, type hints, or justification for the chosen API design"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 3,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "Boolean flags hide caller intent and create an implicit, undocumented invariant that completed and shipped orders are always included, while SELECT * further obscures the data contract."
+      },
+      "usage": {
+        "prompt_tokens": 293,
+        "completion_tokens": 825,
+        "total_tokens": 1118,
+        "completion_tokens_details": {
+          "reasoning_tokens": 671
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 293
+      }
+    },
+    {
+      "trial_id": 37,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Simple and fast for single-node use, but lacks TTL, size limit, and concurrency safety for production."
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 83,
+        "total_tokens": 377,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 294
+      }
+    },
+    {
+      "trial_id": 38,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Unbounded cache growth with no eviction/TTL causes memory leaks and eventual OOM",
+          "Caches None for missing users, making negative lookups sticky and incorrect if a user is later created",
+          "No thread-safety or synchronization around the shared global cache",
+          "Cache can become stale if the database is modified by another process or instance"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "An unbounded cache with no eviction policy and sticky negative caching turns a simple helper into a memory and correctness hazard."
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 641,
+        "total_tokens": 935,
+        "completion_tokens_details": {
+          "reasoning_tokens": 498
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 294
+      }
+    },
+    {
+      "trial_id": 39,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No cache invalidation on concurrent writes",
+          "Unbounded memory growth with no eviction policy",
+          "Race condition between cache read and db update"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "This naive caching pattern is broken under concurrent access and will leak memory indefinitely."
+      },
+      "usage": {
+        "prompt_tokens": 286,
+        "completion_tokens": 101,
+        "total_tokens": 387,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 286
+      }
+    },
+    {
+      "trial_id": 40,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 286,
+        "completion_tokens": 819,
+        "total_tokens": 1105,
+        "completion_tokens_details": {
+          "reasoning_tokens": 646
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 286
+      }
+    },
+    {
+      "trial_id": 41,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Cache invalidation is correct for single-instance use but lacks concurrency control and TTL, which may cause stale data in distributed systems."
+      },
+      "usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 97,
+        "total_tokens": 376,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 279
+      }
+    },
+    {
+      "trial_id": 42,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Unbounded cache growth with no eviction, TTL, or size bound",
+          "Cache invalidation only covers the local update_user path, so external database writes produce stale reads",
+          "Global mutable state creates hidden coupling and is not thread-safe",
+          "No justification, profiling, or complexity analysis for introducing a cache",
+          "No handling of fetch failures or cache entry expiration"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "This is premature optimization in the form of an unbounded, manually invalidated cache that risks stale data and unbounded memory growth without any stated invariants or performance justification."
+      },
+      "usage": {
+        "prompt_tokens": 282,
+        "completion_tokens": 574,
+        "total_tokens": 856,
+        "completion_tokens_details": {
+          "reasoning_tokens": 415
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 282
+      }
+    },
+    {
+      "trial_id": 43,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Pre-compiling regex at module level avoids recompilation overhead and keeps validation logic clean and fast."
+      },
+      "usage": {
+        "prompt_tokens": 305,
+        "completion_tokens": 76,
+        "total_tokens": 381,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 305
+      }
+    },
+    {
+      "trial_id": 44,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Pre-compiling regexes at module level is the right call for a hot validation function, keeping the implementation simple and avoiding repeated compilation overhead."
+      },
+      "usage": {
+        "prompt_tokens": 302,
+        "completion_tokens": 198,
+        "total_tokens": 500,
+        "completion_tokens_details": {
+          "reasoning_tokens": 115
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 302
+      }
+    },
+    {
+      "trial_id": 45,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regex at module level is good practice, but the validation logic silently returns False for None inputs instead of raising an error."
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 87,
+        "total_tokens": 384,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 297
+      }
+    },
+    {
+      "trial_id": 46,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "No None/empty checks on email or phone inputs; passing None raises TypeError instead of returning False."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regexes is the right call, but the API silently assumes valid strings and will crash on None input."
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 359,
+        "total_tokens": 653,
+        "completion_tokens_details": {
+          "reasoning_tokens": 255
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 294
+      }
+    },
+    {
+      "trial_id": 47,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regex at module level is appropriate for repeated use, but the patterns lack Unicode support and the phone regex is overly permissive."
+      },
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 96,
+        "total_tokens": 386,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 290
+      }
+    },
+    {
+      "trial_id": 48,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 3655,
+        "total_tokens": 3945,
+        "completion_tokens_details": {
+          "reasoning_tokens": 3519
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 226
+      }
+    },
+    {
+      "trial_id": 49,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Service layer is fine for encapsulating business logic like email sending, but avoid unnecessary abstraction if it's just a thin wrapper over ORM calls."
+      },
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 89,
+        "total_tokens": 465,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 376
+      }
+    },
+    {
+      "trial_id": 50,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "register() performs an extra SELECT before INSERT instead of relying on a unique constraint, wasting a round-trip and leaving a race window",
+          "deactivate() does not handle a missing user and will raise AttributeError on None",
+          "Implicit commit() inside each method is a surprise and breaks composition in larger transactions"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "For simple CRUD, the service layer is acceptable but the extra existence query is a wasted round-trip and race window; let the database unique constraint enforce email uniqueness."
+      },
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 747,
+        "total_tokens": 1124,
+        "completion_tokens_details": {
+          "reasoning_tokens": 595
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 377
+      }
+    },
+    {
+      "trial_id": 51,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for email_service.send_welcome failure (user registered but email not sent)",
+          "Missing transaction rollback on exception",
+          "hash_pw undefined in scope",
+          "deactivate does not check if user exists before setting active flag"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Silent error swallowing and missing rollback on email failure will leave the system in an inconsistent state."
+      },
+      "usage": {
+        "prompt_tokens": 368,
+        "completion_tokens": 123,
+        "total_tokens": 491,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 368
+      }
+    },
+    {
+      "trial_id": 52,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "deactivate() dereferences the return value of get_by_id() without checking for None, causing an AttributeError when the user does not exist.",
+          "register() commits the database transaction before sending the welcome email, so an email failure leaves the system in an inconsistent state with a persisted user but no welcome email sent.",
+          "get_by_id() uses the deprecated Query.get() pattern instead of the modern Session.get(User, user_id) API."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The code looks simple but silently assumes get_by_id() always returns a user and blurs transaction boundaries with external side effects, making it neither obviously correct nor robust."
+      },
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 615,
+        "total_tokens": 984,
+        "completion_tokens_details": {
+          "reasoning_tokens": 439
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 369
+      }
+    },
+    {
+      "trial_id": 53,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The service layer provides a clear abstraction over ORM, but lacks transactional safety for deactivate and could benefit from explicit invariants like password hashing details."
+      },
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 99,
+        "total_tokens": 460,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 361
+      }
+    },
+    {
+      "trial_id": 54,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "The duplicate-email check is subject to a race condition; concurrent registrations can bypass it unless the database enforces a unique constraint on email.",
+          "deactivate() does not handle a missing user, so get_by_id() may return None and user.active = False will raise AttributeError.",
+          "Sending the welcome email after commit breaks atomicity: if email_service.send_welcome fails, the user is already persisted and the system state is inconsistent.",
+          "There are no explicit transaction boundaries or rollback semantics; failures leave the database and external side effects in an undefined state.",
+          "Unstated invariants such as User.active and email uniqueness are assumed but not documented or enforced in the code."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "The service layer hides serious correctness gaps—concurrency, missing-entity handling, and non-atomic side effects—that must be fixed before this code can be trusted."
+      },
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 728,
+        "total_tokens": 1093,
+        "completion_tokens_details": {
+          "reasoning_tokens": 505
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 365
+      }
+    },
+    {
+      "trial_id": 55,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The _apply_promotions method sorts promos each call, which is O(n log n) and could be cached or pre-sorted for repeated use."
+      },
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 92,
+        "total_tokens": 479,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 387
+      }
+    },
+    {
+      "trial_id": 56,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "calculate_total references self._calculate_tax, which is not defined in the shown code",
+          "self.promos is used in _apply_promotions but is never initialized in the shown code"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The helper decomposition is clean, but the snippet is non-functional due to an undefined _calculate_tax and uninitialized self.promos; test behavior through the public API rather than private methods."
+      },
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 1433,
+        "total_tokens": 1810,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1306
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 377
+      }
+    },
+    {
+      "trial_id": 57,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Private methods are well-encapsulated and testable through public API, but _apply_promotions mutates discount state in a loop which could be clearer."
+      },
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 93,
+        "total_tokens": 472,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 379
+      }
+    },
+    {
+      "trial_id": 58,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "_calculate_tax is called but not defined in the shown code",
+          "self.promos is used without being initialized or validated",
+          "No input validation for items, tax_region, or item attributes (price/qty)",
+          "No handling for None/empty inputs or malformed promo objects"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The public API is clean, but the code is incomplete and trusts all inputs and internal state without validation."
+      },
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 595,
+        "total_tokens": 964,
+        "completion_tokens_details": {
+          "reasoning_tokens": 464
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 369
+      }
+    },
+    {
+      "trial_id": 59,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is clean and well-structured, but the discount cap min(total_discount, subtotal) should be applied per-promo to avoid negative intermediate values, and the sorted promos list is recomputed each call without caching."
+      },
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 106,
+        "total_tokens": 478,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 372
+      }
+    },
+    {
+      "trial_id": 60,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "_calculate_tax is called but never defined, so the code cannot execute",
+          "self.promos is referenced without initialization, declaration, or documented invariant",
+          "promotion stacking order depends on priority but the semantics of priority and interaction between promotions are unstated",
+          "contracts of public and private methods are undocumented: no docstrings, type hints, or complexity analysis"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The decomposition into private helpers supports testing through the public API, but missing definitions and undocumented invariants make the implementation incomplete and hard to verify."
+      },
+      "usage": {
+        "prompt_tokens": 365,
+        "completion_tokens": 925,
+        "total_tokens": 1290,
+        "completion_tokens_details": {
+          "reasoning_tokens": 771
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 365
+      }
+    },
+    {
+      "trial_id": 61,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are fast and debuggable, but this test will break on any field change, which is fine for a stable API but could be more maintainable with targeted checks."
+      },
+      "usage": {
+        "prompt_tokens": 333,
+        "completion_tokens": 97,
+        "total_tokens": 430,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 333
+      }
+    },
+    {
+      "trial_id": 62,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Explicit assertions are direct, fast, and make failures pinpoint the exact mismatch, avoiding the hidden drift of snapshot tests."
+      },
+      "usage": {
+        "prompt_tokens": 330,
+        "completion_tokens": 303,
+        "total_tokens": 633,
+        "completion_tokens_details": {
+          "reasoning_tokens": 225
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 330
+      }
+    },
+    {
+      "trial_id": 63,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are better than snapshot testing for API responses because they document expected contract, but this test is brittle to any field changes and should use targeted assertions on critical fields instead of full dict equality."
+      },
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 100,
+        "total_tokens": 425,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 325
+      }
+    },
+    {
+      "trial_id": 64,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are clear and correct, but asserting exact full-response equality makes the test brittle to harmless schema additions; prefer asserting only the fields the test actually cares about or validating schema."
+      },
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 661,
+        "total_tokens": 983,
+        "completion_tokens_details": {
+          "reasoning_tokens": 567
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 322
+      }
+    },
+    {
+      "trial_id": 65,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are mathematically precise and avoid snapshot fragility, but the hardcoded literal couples the test to every detail of the response, reducing maintainability when the API evolves."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 103,
+        "total_tokens": 421,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 318
+      }
+    },
+    {
+      "trial_id": 66,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "The explicit assertion is admirably precise and readable, but asserting exact full-response equality makes the test brittle against additive API evolution; consider validating only contractually guaranteed fields or using snapshots for incidental payload shape."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 441,
+        "total_tokens": 759,
+        "completion_tokens_details": {
+          "reasoning_tokens": 343
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 318
+      }
+    },
+    {
+      "trial_id": 67,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Direct type casting is fast and simple, but lacks error handling for malformed payloads which could cause runtime crashes."
+      },
+      "usage": {
+        "prompt_tokens": 289,
+        "completion_tokens": 83,
+        "total_tokens": 372,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 289
+      }
+    },
+    {
+      "trial_id": 68,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 280,
+        "completion_tokens": 655,
+        "total_tokens": 935,
+        "completion_tokens_details": {
+          "reasoning_tokens": 526
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "prompt_cache_hit_tokens": 64,
+        "prompt_cache_miss_tokens": 216
+      }
+    },
+    {
+      "trial_id": 69,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No validation or error handling for missing keys or type conversion failures",
+          "Silent fallback to empty dict for metadata hides potential data issues",
+          "No schema enforcement — malformed payloads will raise unhandled exceptions"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "This code assumes perfect input and will crash or silently corrupt data on any unexpected payload."
+      },
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 116,
+        "total_tokens": 397,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 281
+      }
+    },
+    {
+      "trial_id": 70,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 272,
+        "completion_tokens": 582,
+        "total_tokens": 854,
+        "completion_tokens_details": {
+          "reasoning_tokens": 428
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 272
+      }
+    },
+    {
+      "trial_id": 71,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No validation or error handling for missing keys or malformed input; assumes payload structure is always correct.",
+          "No type checking or schema enforcement; type casts may silently fail or produce incorrect results (e.g., float('abc') raises ValueError).",
+          "No handling for optional 'metadata' field type; could be any value, breaking downstream expectations."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The function lacks any validation or error handling, making it brittle and unsafe for an API boundary where input cannot be trusted."
+      },
+      "usage": {
+        "prompt_tokens": 274,
+        "completion_tokens": 162,
+        "total_tokens": 436,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 274
+      }
+    },
+    {
+      "trial_id": 72,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 697,
+        "total_tokens": 965,
+        "completion_tokens_details": {
+          "reasoning_tokens": 552
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 268
+      }
+    },
+    {
+      "trial_id": 73,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Exponential backoff sleep blocks the thread, wasting CPU under high contention; consider a non-blocking retry or queue-based approach instead."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "Optimistic locking with retry is reasonable for low contention, but the fixed sleep pattern and lack of timeout or deadlock detection can hurt throughput under load."
+      },
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 120,
+        "total_tokens": 492,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 372
+      }
+    },
+    {
+      "trial_id": 74,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Missing SKU row is not handled, causing a crash on row['stock'] when the SKU does not exist.",
+          "Negative or zero qty is not validated, allowing stock inflation or bogus reservations.",
+          "Retry sleeps block the caller and can still fail after only three attempts under contention."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The optimistic-locking loop is simple and direct, but missing input and existence guards make it unsafe as written."
+      },
+      "usage": {
+        "prompt_tokens": 364,
+        "completion_tokens": 1125,
+        "total_tokens": 1489,
+        "completion_tokens_details": {
+          "reasoning_tokens": 993
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 364
+      }
+    },
+    {
+      "trial_id": 75,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transaction isolation or locking around read-then-write, allowing race conditions between SELECT and UPDATE",
+          "Retry logic uses exponential backoff but no jitter, causing thundering herd on contention",
+          "Returns inconsistent data: 'reserved' field in success but no confirmation of actual stock deduction",
+          "No error handling for database failures (connection, timeout, deadlock)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "Optimistic locking without a transaction or serializable isolation is fundamentally broken because the SELECT and UPDATE are not atomic."
+      },
+      "usage": {
+        "prompt_tokens": 364,
+        "completion_tokens": 153,
+        "total_tokens": 517,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 364
+      }
+    },
+    {
+      "trial_id": 76,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "SELECT result is not checked: row may be None for an unknown SKU, causing TypeError on row['stock'].",
+          "qty is not validated; negative or zero values can incorrectly increase stock or be accepted.",
+          "Database errors are unhandled and there is no explicit transaction boundary around the read-modify-write.",
+          "Magic retry count and backoff constants are hard-coded."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The optimistic-lock update is sound, but the code will crash on a missing SKU and silently corrupt inventory if qty is negative, so it is not obviously correct."
+      },
+      "usage": {
+        "prompt_tokens": 356,
+        "completion_tokens": 1071,
+        "total_tokens": 1427,
+        "completion_tokens_details": {
+          "reasoning_tokens": 911
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 356
+      }
+    },
+    {
+      "trial_id": 77,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The retry-with-backoff optimistic locking is sound for moderate contention, but lacks a justification for the chosen retry count and backoff parameters, and the exponential backoff could be improved with jitter to avoid thundering herd."
+      },
+      "usage": {
+        "prompt_tokens": 357,
+        "completion_tokens": 106,
+        "total_tokens": 463,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 357
+      }
+    },
+    {
+      "trial_id": 78,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No explicit transaction boundaries or isolation-level documentation between the SELECT and UPDATE.",
+          "Bounded retries can falsely reject legitimate reservations as 'contention', conflating stock availability with concurrency pressure.",
+          "Magic constants (3 attempts, 0.01s base backoff) are unexplained and unconfigurable.",
+          "No input validation: non-positive or negative quantities can corrupt inventory.",
+          "Algorithm choice (optimistic locking) is unjustified and lacks comparison with pessimistic locking or queue-based alternatives.",
+          "No stated or enforced invariants, e.g., stock >= 0 or monotonic version semantics."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The code implements optimistic locking but hides critical concurrency semantics behind magic retry constants and can falsely reject reservations under load without justifying its algorithmic choice."
+      },
+      "usage": {
+        "prompt_tokens": 352,
+        "completion_tokens": 1362,
+        "total_tokens": 1714,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1161
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 352
+      }
+    },
+    {
+      "trial_id": 79,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Missing error handling for DB_USER and DB_PASS env vars that will raise KeyError if unset, but otherwise this is fast and direct."
+      },
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 89,
+        "total_tokens": 428,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 339
+      }
+    },
+    {
+      "trial_id": 80,
+      "condition": "persona",
+      "persona": "carmack",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Direct and simple env-var configuration, but it lacks input validation and required-variable failures surface as opaque KeyError at module import."
+      },
+      "usage": {
+        "prompt_tokens": 330,
+        "completion_tokens": 706,
+        "total_tokens": 1036,
+        "completion_tokens_details": {
+          "reasoning_tokens": 623
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 330
+      }
+    },
+    {
+      "trial_id": 81,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "DB_USER and DB_PASS are accessed with os.environ['...'] which will raise KeyError if missing, but no try/except or fallback is provided, causing a crash without a clear error message",
+          "int(os.environ.get('DB_PORT', '5432')) will crash if DB_PORT is set to a non-integer string, with no validation or error handling"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Mixing safe .get() with unsafe direct access and no input validation creates brittle startup code that fails silently or crashes ungracefully."
+      },
+      "usage": {
+        "prompt_tokens": 331,
+        "completion_tokens": 160,
+        "total_tokens": 491,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 331
+      }
+    },
+    {
+      "trial_id": 82,
+      "condition": "persona",
+      "persona": "torvalds",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Required DB_USER and DB_PASS raise bare KeyError with no helpful error message",
+          "DB_PORT int() conversion can throw ValueError on malformed input without handling",
+          "REDIS_URL is fetched but never used, creating misleading dead code",
+          "Flat module-level globals with no validation/schema make config error-prone and hard to maintain",
+          "No support for config files or service discovery despite the stated topic"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The code mixes partial defaults with required variables, leaves fetched config unused, and fails with unhelpful exceptions instead of validating configuration up front."
+      },
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 777,
+        "total_tokens": 1099,
+        "completion_tokens_details": {
+          "reasoning_tokens": 615
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 322
+      }
+    },
+    {
+      "trial_id": 83,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is clear and functional, but lacks explicit validation for DB_PORT and assumes DB_USER and DB_PASS are always set, which could cause uninformative KeyError at runtime."
+      },
+      "usage": {
+        "prompt_tokens": 324,
+        "completion_tokens": 98,
+        "total_tokens": 422,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 324
+      }
+    },
+    {
+      "trial_id": 84,
+      "condition": "persona",
+      "persona": "knuth",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "REDIS_URL is fetched but never used, creating a misleading dead invariant",
+          "DB_PORT assumes the environment value is a valid integer string with no error handling",
+          "DB_USER and DB_PASS are required but their absence is undocumented and produces raw KeyError",
+          "No abstraction or justification reconciles environment variables with config files or service discovery as the title implies"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The code silently mixes required and optional environment variables, leaves REDIS_URL unused, and never justifies env-vars over config files or service discovery."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 1126,
+        "total_tokens": 1444,
+        "completion_tokens_details": {
+          "reasoning_tokens": 968
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 318
+      }
+    },
+    {
+      "trial_id": 85,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Violates Open/Closed Principle; adding a new payment method requires modifying the pay method, leading to a growing if-else chain."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The if-else chain is rigid and not scalable; a Strategy pattern would decouple payment methods and improve maintainability."
+      },
+      "usage": {
+        "prompt_tokens": 269,
+        "completion_tokens": 107,
+        "total_tokens": 376,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 269
+      }
+    },
+    {
+      "trial_id": 86,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Tight coupling to concrete payment APIs violates dependency inversion and complicates testing.",
+          "If-else chain violates the Open/Closed Principle; adding a payment method requires modifying this class.",
+          "Direct config key access is brittle and may raise KeyError instead of a meaningful error."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The code is simple and works for three methods but would benefit from the Strategy pattern to decouple payment implementations and improve extensibility."
+      },
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 406,
+        "total_tokens": 673,
+        "completion_tokens_details": {
+          "reasoning_tokens": 267
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 267
+      }
+    },
+    {
+      "trial_id": 87,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "The code is clear and correct, but using an explicit Optional return type hint would improve maintainability and readability."
+      },
+      "usage": {
+        "prompt_tokens": 207,
+        "completion_tokens": 82,
+        "total_tokens": 289,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 207
+      }
+    },
+    {
+      "trial_id": 88,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Caller accesses user.name without checking if find_user returned None, causing AttributeError when no matching user exists"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The function correctly returns None for missing users, but the caller fails to handle the None case, leading to a runtime AttributeError."
+      },
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 379,
+        "total_tokens": 588,
+        "completion_tokens_details": {
+          "reasoning_tokens": 278
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 209
+      }
+    },
+    {
+      "trial_id": 89,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function returns partial success results, which is appropriate for multi-file uploads, but the 'ok' flag is misleading when some files succeed."
+      },
+      "usage": {
+        "prompt_tokens": 246,
+        "completion_tokens": 97,
+        "total_tokens": 343,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 246
+      }
+    },
+    {
+      "trial_id": 90,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 243,
+        "completion_tokens": 1303,
+        "total_tokens": 1546,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1203
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 243
+      }
+    },
+    {
+      "trial_id": 91,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Hardcoded defaults limit flexibility; consider making these configurable via constructor injection or environment variables."
+      },
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 79,
+        "total_tokens": 355,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 276
+      }
+    },
+    {
+      "trial_id": 92,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Hardcoded class-level constants prevent runtime configuration and per-service customization without subclassing or source modification.",
+          "Attempt indexing semantics (0-based vs 1-based) are undocumented, risking off-by-one misuse."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The policy is clear and correct but couples defaults to the class, making configuration injection and environment-specific tuning impossible."
+      },
+      "usage": {
+        "prompt_tokens": 260,
+        "completion_tokens": 609,
+        "total_tokens": 869,
+        "completion_tokens_details": {
+          "reasoning_tokens": 488
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 260
+      }
+    },
+    {
+      "trial_id": 93,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Method chaining provides a fluent and readable query builder interface, but ensure the underlying implementation handles chaining correctly and avoids side effects."
+      },
+      "usage": {
+        "prompt_tokens": 225,
+        "completion_tokens": 82,
+        "total_tokens": 307,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 225
+      }
+    },
+    {
+      "trial_id": 94,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "The variable name `query` is misleading because `.execute()` returns query results, not the query object itself."
+      },
+      "usage": {
+        "prompt_tokens": 222,
+        "completion_tokens": 351,
+        "total_tokens": 573,
+        "completion_tokens_details": {
+          "reasoning_tokens": 271
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 222
+      }
+    },
+    {
+      "trial_id": 95,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Boolean flags are acceptable here but could be replaced with a more explicit status filter parameter for better readability and extensibility."
+      },
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 83,
+        "total_tokens": 334,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 251
+      }
+    },
+    {
+      "trial_id": 96,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 2,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "Boolean flags make call sites unreadable and the API hard to extend; prefer explicit methods like fetch_active_orders or a status filter parameter."
+      },
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 400,
+        "total_tokens": 639,
+        "completion_tokens_details": {
+          "reasoning_tokens": 315
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 239
+      }
+    },
+    {
+      "trial_id": 97,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Simple caching pattern works but lacks cache invalidation for concurrent updates and has no size limit, risking memory growth."
+      },
+      "usage": {
+        "prompt_tokens": 228,
+        "completion_tokens": 83,
+        "total_tokens": 311,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 228
+      }
+    },
+    {
+      "trial_id": 98,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Unbounded module-level cache with no TTL or size limit causes memory leaks",
+          "No thread safety: race conditions between get_user and update_user",
+          "Cache becomes stale if database is modified outside update_user",
+          "Caches None forever if user is not found without invalidation path",
+          "No error handling for database failures"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "The implementation uses a naive unbounded global cache that risks memory exhaustion, stale data, and race conditions in any concurrent environment."
+      },
+      "usage": {
+        "prompt_tokens": 228,
+        "completion_tokens": 457,
+        "total_tokens": 685,
+        "completion_tokens_details": {
+          "reasoning_tokens": 315
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 228
+      }
+    },
+    {
+      "trial_id": 99,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regex at module level is efficient and clear, though the patterns could be more robust for international email or phone formats."
+      },
+      "usage": {
+        "prompt_tokens": 239,
+        "completion_tokens": 82,
+        "total_tokens": 321,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 239
+      }
+    },
+    {
+      "trial_id": 100,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "EMAIL_RE is an oversimplified email pattern that rejects valid addresses (e.g., quoted local parts, plus subdomains with hyphens edge cases) and may accept invalid ones.",
+          "PHONE_RE only validates allowed characters and length, not actual digit count or structure, so strings like '---------(' within length could match.",
+          "validate_contact will raise TypeError if email or phone are None instead of returning False."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regexes at module level is efficient and maintainable, but the patterns are approximate and lack input validation."
+      },
+      "usage": {
+        "prompt_tokens": 236,
+        "completion_tokens": 543,
+        "total_tokens": 779,
+        "completion_tokens_details": {
+          "reasoning_tokens": 379
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 236
+      }
+    },
+    {
+      "trial_id": 101,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Service layer adds value with email notification and validation, but lacks error handling and transaction rollback on email failure."
+      },
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 82,
+        "total_tokens": 392,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 310
+      }
+    },
+    {
+      "trial_id": 102,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "deactivate() does not handle the case where get_by_id returns None, causing an AttributeError",
+          "register() checks for existing email in application code without a database unique constraint, creating a race condition",
+          "register() sends the welcome email after commit with no rollback strategy; an email failure leaves the user persisted but unwelcomed",
+          "No input validation or normalization is performed on email or password"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The service layer structure is sensible but deactivate has a null-dereference bug and register has a race condition and transactional email issue that must be fixed."
+      },
+      "usage": {
+        "prompt_tokens": 311,
+        "completion_tokens": 672,
+        "total_tokens": 983,
+        "completion_tokens_details": {
+          "reasoning_tokens": 509
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 311
+      }
+    },
+    {
+      "trial_id": 103,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is well-structured with clear separation of concerns, but testing private methods directly may be necessary for complex logic like promotion stacking."
+      },
+      "usage": {
+        "prompt_tokens": 321,
+        "completion_tokens": 86,
+        "total_tokens": 407,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 321
+      }
+    },
+    {
+      "trial_id": 104,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "calculate_total calls self._calculate_tax, but _calculate_tax is not defined in the provided class.",
+          "self.promos is used without being initialized or documented in __init__."
+        ],
+        "score_clarity": 4,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The helper decomposition is clean, but the missing _calculate_tax method and uninitialized self.promos make the code non-functional as shown."
+      },
+      "usage": {
+        "prompt_tokens": 311,
+        "completion_tokens": 361,
+        "total_tokens": 672,
+        "completion_tokens_details": {
+          "reasoning_tokens": 244
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 311
+      }
+    },
+    {
+      "trial_id": 105,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are clear and precise but can be brittle for large or frequently changing API responses; consider using snapshot testing or partial matching for better maintainability."
+      },
+      "usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 91,
+        "total_tokens": 358,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 267
+      }
+    },
+    {
+      "trial_id": 106,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Explicit assertions are clear and precise but make the test brittle to any API response changes such as added fields or updated test data."
+      },
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 395,
+        "total_tokens": 659,
+        "completion_tokens_details": {
+          "reasoning_tokens": 312
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 264
+      }
+    },
+    {
+      "trial_id": 107,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The code performs type casting and basic validation but lacks error handling for missing keys or invalid formats, which could lead to runtime exceptions."
+      },
+      "usage": {
+        "prompt_tokens": 223,
+        "completion_tokens": 94,
+        "total_tokens": 317,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 223
+      }
+    },
+    {
+      "trial_id": 108,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "PARSE_ERROR"
+      },
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 548,
+        "total_tokens": 762,
+        "completion_tokens_details": {
+          "reasoning_tokens": 404
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 214
+      }
+    },
+    {
+      "trial_id": 109,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 3,
+        "key_observation": "Optimistic locking with retry is appropriate for moderate contention, but exponential backoff and max retries should be configurable and the approach may degrade under high contention."
+      },
+      "usage": {
+        "prompt_tokens": 306,
+        "completion_tokens": 93,
+        "total_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 306
+      }
+    },
+    {
+      "trial_id": 110,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "concurrency_optimistic_lock",
+      "domain": "concurrency",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "DB-API execute() may not accept multiple positional args; parameters should be passed as a tuple/list",
+          "No validation that qty > 0, so negative or zero values can corrupt inventory",
+          "SELECT and UPDATE are not wrapped in an explicit transaction with proper isolation, risking inconsistent reads on some DB configs",
+          "Only 3 short retries with no logging/metrics can cause frequent contention failures under load"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The optimistic-locking update is mostly correct but relies on fragile DB-API argument passing, lacks input validation and explicit transaction control, and retries too briefly for high-contention scenarios."
+      },
+      "usage": {
+        "prompt_tokens": 298,
+        "completion_tokens": 864,
+        "total_tokens": 1162,
+        "completion_tokens_details": {
+          "reasoning_tokens": 689
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 298
+      }
+    },
+    {
+      "trial_id": 111,
+      "condition": "control",
+      "persona": "none",
+      "model": "deepseek-ai/DeepSeek-V4-Pro",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Missing error handling for missing required env vars DB_USER and DB_PASS, and DB_PORT conversion could raise ValueError."
+      },
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 83,
+        "total_tokens": 356,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 273
+      }
+    },
+    {
+      "trial_id": 112,
+      "condition": "control",
+      "persona": "none",
+      "model": "moonshotai/Kimi-K2.7-Code",
+      "snippet_id": "config_env_vs_file",
+      "domain": "config",
+      "pre_reg_hash": "9c80bad72382d8c4",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "Inconsistent required/optional handling: DB_USER and DB_PASS raise KeyError while other DB settings have defaults, making configuration requirements unclear.",
+          "DB_PORT conversion lacks validation; a malformed value raises a confusing ValueError instead of a clear configuration error.",
+          "REDIS_URL is fetched but never used in the shown code, suggesting dead code or an incomplete implementation.",
+          "Sensitive credentials are read directly from os.environ at module level without masking or centralized configuration, complicating testing and security auditing."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 3,
+        "score_efficiency": 5,
+        "score_maintainability": 2,
+        "key_observation": "The snippet works for simple cases but mixes required and optional environment variables without validation, making configuration failures harder to diagnose and the code harder to maintain."
+      },
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 646,
+        "total_tokens": 910,
+        "completion_tokens_details": {
+          "reasoning_tokens": 462
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 264
+      }
+    }
+  ]
+}

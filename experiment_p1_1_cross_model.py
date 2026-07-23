@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # ── Config ─────────────────────────────────────────────────────────────────
-SF_API_KEY = "sk-tksxbavsitqvkuskfiigkczcuqujwwzneswvjxchrnjqfoca"
+SF_API_KEY = os.environ["SF_TOKEN"]
 SF_BASE_URL = "https://api.siliconflow.cn/v1"
 MODELS = ["Qwen/Qwen3.5-27B", "deepseek-ai/DeepSeek-V4-Flash"]
 TRIALS_PER_TASK = 20

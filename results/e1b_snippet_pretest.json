@@ -1,0 +1,3012 @@
+{
+  "experiment": "e1b_snippet_pretest",
+  "phase": 1,
+  "pre_reg_hash": "429b32cc1774589c",
+  "n_snippets_tested": 30,
+  "n_trials_completed": 90,
+  "n_errors": 0,
+  "total_tokens": 39404,
+  "model": "deepseek-ai/DeepSeek-V4-Pro (via direct API as deepseek-chat)",
+  "selection_criterion": "agreement_rate < 1.0 AND 0 errors",
+  "ranking": [
+    {
+      "id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "title": "Strategy pattern vs if-else for 3 payment methods",
+      "agreement_rate": 0.0,
+      "disagree_count": 3,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "title": "None return vs explicit Optional type",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "err_partial_success",
+      "domain": "error_handling",
+      "title": "Partial success vs all-or-nothing for multi-file upload",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_config_in_code",
+      "domain": "api_design",
+      "title": "Hardcoded defaults vs configuration injection",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_method_chaining",
+      "domain": "api_design",
+      "title": "Method chaining vs explicit steps for query builder",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_boolean_params",
+      "domain": "api_design",
+      "title": "Boolean flag vs separate methods",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "title": "Aggressive caching vs compute-on-demand",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "title": "Pre-compiled regex module-level vs inline",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "arch_service_layer",
+      "domain": "architecture",
+      "title": "Service layer for simple CRUD vs direct ORM",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "test_private_methods",
+      "domain": "testing",
+      "title": "Testing private methods vs testing only public API",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "title": "Snapshot testing vs explicit assertions for API response",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "title": "Type casting vs schema validation at API boundary",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "err_failfast_vs_graceful",
+      "domain": "error_handling",
+      "title": "Fail-fast vs graceful degradation in data pipeline",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "err_return_code_vs_exception",
+      "domain": "error_handling",
+      "title": "Return codes vs exceptions for business logic",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "err_log_and_swallow",
+      "domain": "error_handling",
+      "title": "Log-and-swallow vs propagate in background job",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "err_assert_vs_validate",
+      "domain": "error_handling",
+      "title": "assert vs explicit validation in public API",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "api_dict_vs_dataclass",
+      "domain": "api_design",
+      "title": "Dict vs dataclass as function return type",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "api_positional_vs_kwargs",
+      "domain": "api_design",
+      "title": "Positional vs keyword-only for multi-param function",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "perf_listcomp_vs_loop",
+      "domain": "perf_vs_readability",
+      "title": "Nested list comprehension vs explicit loop",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE",
+        "knuth": "APPROVE"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "perf_preallocate_vs_append",
+      "domain": "perf_vs_readability",
+      "title": "Pre-allocated array vs dynamic append",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE",
+        "knuth": "APPROVE"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "perf_lazy_vs_eager",
+      "domain": "perf_vs_readability",
+      "title": "Generator pipeline vs immediate list",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "arch_inheritance_depth",
+      "domain": "architecture",
+      "title": "Deep inheritance vs composition for model layer",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "arch_singleton",
+      "domain": "architecture",
+      "title": "Singleton vs dependency injection for DB connection",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "arch_microservice_boundary",
+      "domain": "architecture",
+      "title": "In-process vs HTTP call for order validation",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "test_mock_vs_real",
+      "domain": "testing",
+      "title": "Mock everything vs integration test for email sending",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "test_coverage_target",
+      "domain": "testing",
+      "title": "100% coverage target vs risk-based testing",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "type_any_vs_generic",
+      "domain": "type_system",
+      "title": "Any vs Generic in collection utility",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "type_enums_vs_strings",
+      "domain": "type_system",
+      "title": "String constants vs Enum for status values",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "type_default_args",
+      "domain": "type_system",
+      "title": "Mutable default arguments vs None sentinel",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": false
+    },
+    {
+      "id": "type_duck_vs_isinstance",
+      "domain": "type_system",
+      "title": "Duck typing vs isinstance check for file-like objects",
+      "agreement_rate": 1.0,
+      "disagree_count": 0,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": false
+    }
+  ],
+  "selected": [
+    "arch_strategy_pattern",
+    "err_null_vs_optional",
+    "err_partial_success",
+    "api_config_in_code",
+    "api_method_chaining",
+    "api_boolean_params",
+    "perf_cache_everything",
+    "perf_regex_compiled",
+    "arch_service_layer",
+    "test_private_methods",
+    "test_snapshot_vs_assert",
+    "type_cast_vs_validate"
+  ],
+  "selected_details": [
+    {
+      "id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "title": "Strategy pattern vs if-else for 3 payment methods",
+      "agreement_rate": 0.0,
+      "disagree_count": 3,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "title": "None return vs explicit Optional type",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "err_partial_success",
+      "domain": "error_handling",
+      "title": "Partial success vs all-or-nothing for multi-file upload",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_config_in_code",
+      "domain": "api_design",
+      "title": "Hardcoded defaults vs configuration injection",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_method_chaining",
+      "domain": "api_design",
+      "title": "Method chaining vs explicit steps for query builder",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "api_boolean_params",
+      "domain": "api_design",
+      "title": "Boolean flag vs separate methods",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "title": "Aggressive caching vs compute-on-demand",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "title": "Pre-compiled regex module-level vs inline",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE",
+        "torvalds": "APPROVE_WITH_NOTES",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "arch_service_layer",
+      "domain": "architecture",
+      "title": "Service layer for simple CRUD vs direct ORM",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "test_private_methods",
+      "domain": "testing",
+      "title": "Testing private methods vs testing only public API",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "title": "Snapshot testing vs explicit assertions for API response",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "REJECT",
+        "torvalds": "REJECT",
+        "knuth": "APPROVE_WITH_NOTES"
+      },
+      "errors": 0,
+      "selectable": true
+    },
+    {
+      "id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "title": "Type casting vs schema validation at API boundary",
+      "agreement_rate": 0.3333333333333333,
+      "disagree_count": 2,
+      "verdicts": {
+        "carmack": "APPROVE_WITH_NOTES",
+        "torvalds": "REJECT",
+        "knuth": "REJECT"
+      },
+      "errors": 0,
+      "selectable": true
+    }
+  ],
+  "all_results": [
+    {
+      "snippet_id": "err_failfast_vs_graceful",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is clean and fast, but the bare 'raise' in the SchemaError path could be more explicit to avoid confusion about re-raising the same exception."
+      },
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 93,
+        "total_tokens": 405,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 312
+      }
+    },
+    {
+      "snippet_id": "err_failfast_vs_graceful",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The mixed strategy is clear but silently swallowing CacheMissError may hide data quality issues that should be logged or flagged."
+      },
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 83,
+        "total_tokens": 405,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 322
+      }
+    },
+    {
+      "snippet_id": "err_failfast_vs_graceful",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code clearly separates fail-fast for schema errors from graceful degradation for cache misses, but the implicit invariant that validated records are always valid for downstream use after a cache miss should be documented."
+      },
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 98,
+        "total_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 301
+      }
+    },
+    {
+      "snippet_id": "err_return_code_vs_exception",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Missing transaction atomicity: debit/credit not wrapped in a transaction, partial failure possible",
+          "Returning dicts instead of exceptions forces callers to check result manually, error-prone and slower in hot paths"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Return codes are fine for simple cases, but lack of atomicity and error handling discipline makes this code fragile and unsafe for production."
+      },
+      "usage": {
+        "prompt_tokens": 337,
+        "completion_tokens": 124,
+        "total_tokens": 461,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 337
+      }
+    },
+    {
+      "snippet_id": "err_return_code_vs_exception",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No transaction/atomicity: if debit succeeds but credit fails, money is lost",
+          "No error handling for db operations (e.g., connection failure, race conditions)",
+          "Returning dicts instead of structured results or exceptions makes caller error-prone"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Missing atomicity and error handling makes this code dangerous for real financial transfers."
+      },
+      "usage": {
+        "prompt_tokens": 347,
+        "completion_tokens": 120,
+        "total_tokens": 467,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 347
+      }
+    },
+    {
+      "snippet_id": "err_return_code_vs_exception",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Missing transaction atomicity: debit and credit are not wrapped in a transaction, risking partial updates on failure",
+          "Return codes conflate business logic errors with system errors, obscuring invariants and forcing callers to check every call",
+          "No rollback or error handling if db.credit fails after db.debit succeeds"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The code lacks transactional integrity and uses return codes where exceptions would better preserve invariants and readability."
+      },
+      "usage": {
+        "prompt_tokens": 326,
+        "completion_tokens": 138,
+        "total_tokens": 464,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 326
+      }
+    },
+    {
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Returning None is fine for a simple lookup, but callers must handle the None case to avoid AttributeError."
+      },
+      "usage": {
+        "prompt_tokens": 298,
+        "completion_tokens": 84,
+        "total_tokens": 382,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 298
+      }
+    },
+    {
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Returning None forces caller to remember to check for None before accessing user.name, leading to AttributeError; should return Optional[User] and caller must handle None explicitly"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Returning None without type annotation or forcing caller to handle the missing case is a bug waiting to happen."
+      },
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 110,
+        "total_tokens": 418,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 308
+      }
+    },
+    {
+      "snippet_id": "err_null_vs_optional",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Returning None is idiomatic in Python for missing values, but callers must handle the None case to avoid AttributeError."
+      },
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 86,
+        "total_tokens": 373,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 287
+      }
+    },
+    {
+      "snippet_id": "err_log_and_swallow",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The loop is O(n) and simple, but consider batching email sends or using async I/O to avoid sequential blocking on each user."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 88,
+        "total_tokens": 406,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 318
+      }
+    },
+    {
+      "snippet_id": "err_log_and_swallow",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "No handling for unexpected exceptions (e.g., network errors) — they crash the entire batch",
+          "Retry logic is missing: EmailTimeoutError is logged but not retried, contradicting the log message",
+          "No validation that users list is non-empty or that email_service is initialized"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The code correctly separates bounce handling from transient failures but silently swallows unexpected exceptions and lacks proper retry semantics."
+      },
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 140,
+        "total_tokens": 468,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 328
+      }
+    },
+    {
+      "snippet_id": "err_log_and_swallow",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The function silently swallows EmailTimeoutError without any backoff or retry logic, which may lead to infinite retries under persistent failures."
+      },
+      "usage": {
+        "prompt_tokens": 307,
+        "completion_tokens": 89,
+        "total_tokens": 396,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 307
+      }
+    },
+    {
+      "snippet_id": "err_assert_vs_validate",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "assert statements used for input validation in public API; they are disabled with -O flag, leading to silent failures and security bypass"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Use explicit if/raise for public API validation instead of assert, which can be stripped at runtime and violates fail-fast principles."
+      },
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 107,
+        "total_tokens": 460,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 353
+      }
+    },
+    {
+      "snippet_id": "err_assert_vs_validate",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "assert statements used for input validation in public API; they are disabled with -O flag, leading to silent incorrect behavior",
+          "no handling for None or empty cart_items beyond assert",
+          "promo_code validation via assert can be bypassed, allowing invalid promo to silently produce wrong discount"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Using assert for public API validation is a correctness bug because asserts are stripped in optimized Python, turning runtime errors into silent data corruption."
+      },
+      "usage": {
+        "prompt_tokens": 363,
+        "completion_tokens": 138,
+        "total_tokens": 501,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 363
+      }
+    },
+    {
+      "snippet_id": "err_assert_vs_validate",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "assert statements used for input validation in public API; asserts can be disabled at runtime, leading to silent failures or security bypasses"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Assertions are for debugging invariants, not for validating public API inputs which must use explicit checks that always execute."
+      },
+      "usage": {
+        "prompt_tokens": 342,
+        "completion_tokens": 104,
+        "total_tokens": 446,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 342
+      }
+    },
+    {
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 5,
+        "key_observation": "Simple, direct, and correct partial-success handling with no unnecessary abstraction."
+      },
+      "usage": {
+        "prompt_tokens": 326,
+        "completion_tokens": 70,
+        "total_tokens": 396,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 326
+      }
+    },
+    {
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function correctly implements partial success semantics but the 'ok' flag is misleading since it's true only when no errors occur, not when partial success is acceptable."
+      },
+      "usage": {
+        "prompt_tokens": 336,
+        "completion_tokens": 92,
+        "total_tokens": 428,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 336
+      }
+    },
+    {
+      "snippet_id": "err_partial_success",
+      "domain": "error_handling",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function correctly implements partial success semantics, but the 'ok' flag being true only when no errors occur is a minor semantic mismatch with the partial success pattern."
+      },
+      "usage": {
+        "prompt_tokens": 315,
+        "completion_tokens": 92,
+        "total_tokens": 407,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 315
+      }
+    },
+    {
+      "snippet_id": "api_dict_vs_dataclass",
+      "domain": "api_design",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Sorting raw twice for p95 and p99 is O(n log n) each; sort once and reuse",
+          "p95/p99 indexing may be off by one; should use int(len(raw)*0.95) - 1 or math.ceil",
+          "Returning a dict is fine, but the repeated sorted() calls are wasteful"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 2,
+        "score_maintainability": 4,
+        "key_observation": "Sort raw once and compute p95/p99 from the sorted list to halve the sorting cost."
+      },
+      "usage": {
+        "prompt_tokens": 317,
+        "completion_tokens": 146,
+        "total_tokens": 463,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 317
+      }
+    },
+    {
+      "snippet_id": "api_dict_vs_dataclass",
+      "domain": "api_design",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Division by zero if raw is empty",
+          "p95/p99 indices may be out of range if len(raw) is small",
+          "No error handling for failed prometheus query",
+          "Returning a dict with no type guarantees or documentation"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "This function silently fails on empty data and lacks any type safety or error handling, making it a ticking time bomb in production."
+      },
+      "usage": {
+        "prompt_tokens": 327,
+        "completion_tokens": 128,
+        "total_tokens": 455,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 327
+      }
+    },
+    {
+      "snippet_id": "api_dict_vs_dataclass",
+      "domain": "api_design",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "p95 and p99 calculations use integer truncation instead of proper interpolation, yielding biased estimates",
+          "sorted(raw) is called twice, doubling O(n log n) cost unnecessarily",
+          "function lacks type hints and docstring, obscuring return structure and assumptions about time_range"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "Returning a plain dict hides the contract of the result structure, and the percentile calculations are mathematically imprecise."
+      },
+      "usage": {
+        "prompt_tokens": 306,
+        "completion_tokens": 134,
+        "total_tokens": 440,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 306
+      }
+    },
+    {
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Hardcoded defaults are fine for a single use case, but consider making them configurable if this policy needs to vary across different services or environments."
+      },
+      "usage": {
+        "prompt_tokens": 356,
+        "completion_tokens": 91,
+        "total_tokens": 447,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 356
+      }
+    },
+    {
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Hardcoded configuration prevents runtime customization or testing",
+          "should_retry ignores delay calculation and backoff logic, making the policy incomplete",
+          "Class-level constants are mutable and can be accidentally overwritten"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Hardcoding retry parameters as class constants violates the principle of configuration injection, making the policy inflexible and untestable."
+      },
+      "usage": {
+        "prompt_tokens": 366,
+        "completion_tokens": 121,
+        "total_tokens": 487,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 366
+      }
+    },
+    {
+      "snippet_id": "api_config_in_code",
+      "domain": "api_design",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Hardcoded defaults are acceptable for a simple policy, but the class lacks a mechanism for callers to inject custom configurations, which may limit reuse in varied environments."
+      },
+      "usage": {
+        "prompt_tokens": 345,
+        "completion_tokens": 94,
+        "total_tokens": 439,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 345
+      }
+    },
+    {
+      "snippet_id": "api_positional_vs_kwargs",
+      "domain": "api_design",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Using locals() blindly passes all local variables including 'self' if in a method, and is fragile to refactoring; also passes 'labels' default None which may be unintended."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 1,
+        "key_observation": "locals() is a debugging trap that breaks when variable names change or new locals are added, prefer explicit dict construction."
+      },
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 117,
+        "total_tokens": 407,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 290
+      }
+    },
+    {
+      "snippet_id": "api_positional_vs_kwargs",
+      "domain": "api_design",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Using locals() blindly captures all local variables, including unintended ones like 'self' if in a method, and creates a fragile implicit contract with the database schema; also missing validation for None labels and no error handling for db.insert failure"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The function's use of locals() for database insertion is a maintainability and correctness disaster, as it silently couples the parameter names to the database schema and swallows any insertion errors."
+      },
+      "usage": {
+        "prompt_tokens": 300,
+        "completion_tokens": 138,
+        "total_tokens": 438,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 300
+      }
+    },
+    {
+      "snippet_id": "api_positional_vs_kwargs",
+      "domain": "api_design",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Using locals() captures unintended local variables and breaks readability; the function signature mixes positional and keyword arguments in a way that invites call-site errors; no validation or documentation of invariants for parameters like threshold or labels."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 1,
+        "key_observation": "The use of locals() to pass arguments to db.insert obscures the contract and makes the code fragile to refactoring."
+      },
+      "usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 124,
+        "total_tokens": 403,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 279
+      }
+    },
+    {
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Method chaining here is clean, direct, and avoids unnecessary abstraction—exactly what a query builder should be."
+      },
+      "usage": {
+        "prompt_tokens": 305,
+        "completion_tokens": 80,
+        "total_tokens": 385,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 305
+      }
+    },
+    {
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Method chaining is fine here, but ensure execute() returns results or raises exceptions explicitly—no silent failures."
+      },
+      "usage": {
+        "prompt_tokens": 315,
+        "completion_tokens": 82,
+        "total_tokens": 397,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 315
+      }
+    },
+    {
+      "snippet_id": "api_method_chaining",
+      "domain": "api_design",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The fluent interface is clear and readable, but the lack of explicit type annotations and potential for unclosed parentheses or missing method chaining steps could be improved with a more literate style."
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 97,
+        "total_tokens": 391,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 294
+      }
+    },
+    {
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Direct and clear, but the SQL IN clause with a dynamic list may cause suboptimal query plans; consider using a fixed set of statuses or a bitmask for high-throughput paths."
+      },
+      "usage": {
+        "prompt_tokens": 335,
+        "completion_tokens": 97,
+        "total_tokens": 432,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 335
+      }
+    },
+    {
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Boolean flags create combinatorial explosion of states, making API unclear and hard to test; separate methods or a status filter parameter would be cleaner",
+          "SQL injection risk: using string concatenation for IN clause with user-supplied statuses is dangerous; should use parameterized query with placeholders"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Boolean flags obscure intent and lead to fragile code; prefer explicit query methods or a status list parameter."
+      },
+      "usage": {
+        "prompt_tokens": 345,
+        "completion_tokens": 132,
+        "total_tokens": 477,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 345
+      }
+    },
+    {
+      "snippet_id": "api_boolean_params",
+      "domain": "api_design",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The design is clear and flexible, but the function signature could be simplified by using a single statuses parameter to avoid combinatorial flag explosion."
+      },
+      "usage": {
+        "prompt_tokens": 324,
+        "completion_tokens": 88,
+        "total_tokens": 412,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 324
+      }
+    },
+    {
+      "snippet_id": "perf_listcomp_vs_loop",
+      "domain": "perf_vs_readability",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Direct, efficient O(n) iteration with no unnecessary allocations or abstraction."
+      },
+      "usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 71,
+        "total_tokens": 358,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 287
+      }
+    },
+    {
+      "snippet_id": "perf_listcomp_vs_loop",
+      "domain": "perf_vs_readability",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Clean, correct, and efficient; the only minor concern is assuming users_by_dept values are iterables of user objects with the required attributes."
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 85,
+        "total_tokens": 382,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 297
+      }
+    },
+    {
+      "snippet_id": "perf_listcomp_vs_loop",
+      "domain": "perf_vs_readability",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The nested comprehension clearly expresses the intent of filtering and extracting emails from a department structure, though a comment explaining the business meaning of the filter conditions would improve readability."
+      },
+      "usage": {
+        "prompt_tokens": 276,
+        "completion_tokens": 88,
+        "total_tokens": 364,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 276
+      }
+    },
+    {
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [
+          "No cache invalidation for concurrent writes",
+          "Global mutable cache is not thread-safe"
+        ],
+        "score_clarity": 4,
+        "score_correctness": 3,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Simple and fast for single-threaded use, but lacks concurrency control and cache size limits."
+      },
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 98,
+        "total_tokens": 406,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 308
+      }
+    },
+    {
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No cache invalidation on concurrent writes",
+          "Cache grows unboundedly with no eviction policy",
+          "No error handling for db.fetch_user failure (could cache None/exception)",
+          "Race condition: stale data served between cache pop and subsequent fetch"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "This naive cache trades correctness for perceived performance, ignoring concurrency, memory limits, and error propagation."
+      },
+      "usage": {
+        "prompt_tokens": 318,
+        "completion_tokens": 126,
+        "total_tokens": 444,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 318
+      }
+    },
+    {
+      "snippet_id": "perf_cache_everything",
+      "domain": "perf_vs_readability",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "Cache invalidation is handled correctly for single-user updates, but the design lacks concurrency control and a cache eviction policy, which may cause stale data or memory issues under load."
+      },
+      "usage": {
+        "prompt_tokens": 297,
+        "completion_tokens": 97,
+        "total_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 297
+      }
+    },
+    {
+      "snippet_id": "perf_preallocate_vs_append",
+      "domain": "perf_vs_readability",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Pre-allocating the array avoids dynamic resizing overhead and is the fastest, most predictable approach for known-length transforms."
+      },
+      "usage": {
+        "prompt_tokens": 271,
+        "completion_tokens": 80,
+        "total_tokens": 351,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 271
+      }
+    },
+    {
+      "snippet_id": "perf_preallocate_vs_append",
+      "domain": "perf_vs_readability",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-allocating the array avoids repeated resizing overhead and is clearly correct for a fixed-size output."
+      },
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 77,
+        "total_tokens": 358,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 281
+      }
+    },
+    {
+      "snippet_id": "perf_preallocate_vs_append",
+      "domain": "perf_vs_readability",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-allocating the list with known size is a clear, correct, and efficient pattern that communicates intent and avoids unnecessary dynamic resizing."
+      },
+      "usage": {
+        "prompt_tokens": 260,
+        "completion_tokens": 84,
+        "total_tokens": 344,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 260
+      }
+    },
+    {
+      "snippet_id": "perf_lazy_vs_eager",
+      "domain": "perf_vs_readability",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "Generator pipeline is memory-efficient but sorting all scored documents for top 10 is O(n log n) when a heap-based partial sort would be O(n log 10)."
+      },
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 96,
+        "total_tokens": 406,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 310
+      }
+    },
+    {
+      "snippet_id": "perf_lazy_vs_eager",
+      "domain": "perf_vs_readability",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The generator pipeline is elegant and memory-efficient, but the final sorted() call materializes the entire filtered set, which could be a bottleneck for large datasets."
+      },
+      "usage": {
+        "prompt_tokens": 320,
+        "completion_tokens": 91,
+        "total_tokens": 411,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 320
+      }
+    },
+    {
+      "snippet_id": "perf_lazy_vs_eager",
+      "domain": "perf_vs_readability",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The generator pipeline elegantly defers computation, but the final sorted() forces materialization of all scored documents, so the lazy pipeline offers no asymptotic benefit over a list comprehension."
+      },
+      "usage": {
+        "prompt_tokens": 299,
+        "completion_tokens": 96,
+        "total_tokens": 395,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 299
+      }
+    },
+    {
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 5,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 5,
+        "key_observation": "Module-level pre-compilation avoids repeated compilation overhead and is the optimal pattern for hot-path validation."
+      },
+      "usage": {
+        "prompt_tokens": 319,
+        "completion_tokens": 75,
+        "total_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 319
+      }
+    },
+    {
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regex at module level is good practice, but the validation silently returns False for None inputs instead of raising a clear error."
+      },
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 87,
+        "total_tokens": 416,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 329
+      }
+    },
+    {
+      "snippet_id": "perf_regex_compiled",
+      "domain": "perf_vs_readability",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Pre-compiling regex at module level is a sound practice for repeated use, but the patterns lack Unicode support and the phone regex is overly permissive."
+      },
+      "usage": {
+        "prompt_tokens": 308,
+        "completion_tokens": 91,
+        "total_tokens": 399,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 308
+      }
+    },
+    {
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "For only 3 payment methods, this if-else chain is simpler, faster, and more debuggable than a strategy pattern with its overhead."
+      },
+      "usage": {
+        "prompt_tokens": 349,
+        "completion_tokens": 86,
+        "total_tokens": 435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 349
+      }
+    },
+    {
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for missing config keys",
+          "Silent failure if config lacks required keys (e.g., 'key', 'client_id', 'account')",
+          "Violates Open/Closed principle; adding a new method requires modifying this class"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The if-else chain is brittle and lacks validation of config data, making it prone to runtime errors."
+      },
+      "usage": {
+        "prompt_tokens": 359,
+        "completion_tokens": 125,
+        "total_tokens": 484,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 359
+      }
+    },
+    {
+      "snippet_id": "arch_strategy_pattern",
+      "domain": "architecture",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "For only three payment methods, this simple if-else is clearer and more maintainable than a premature strategy pattern abstraction."
+      },
+      "usage": {
+        "prompt_tokens": 338,
+        "completion_tokens": 85,
+        "total_tokens": 423,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 338
+      }
+    },
+    {
+      "snippet_id": "arch_inheritance_depth",
+      "domain": "architecture",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Deep inheritance chain creates fragile coupling and hidden performance costs (e.g., multiple super() calls on every save/delete)",
+          "SoftDeleteModel.save() calls super().save() which triggers TimestampedModel.save() then BaseModel.save() — each call does a full db insert/update, not just a field update",
+          "No transaction or atomicity: soft delete calls self.save() which may partially fail, leaving inconsistent state"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 2,
+        "score_maintainability": 2,
+        "key_observation": "Deep inheritance adds unnecessary overhead and fragility; composition with explicit mixins or a single model class would be faster, simpler, and more debuggable."
+      },
+      "usage": {
+        "prompt_tokens": 325,
+        "completion_tokens": 178,
+        "total_tokens": 503,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 325
+      }
+    },
+    {
+      "snippet_id": "arch_inheritance_depth",
+      "domain": "architecture",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Inheritance chain creates fragile coupling: SoftDeleteModel.save() calls super().save() which in TimestampedModel sets updated_at, but SoftDeleteModel.delete() calls self.save() which will also set updated_at, potentially overwriting intended semantics",
+          "No error handling: db operations can fail silently, no transaction support for multi-step operations like soft delete then save",
+          "Data structure mismatch: table name as class attribute is fragile and doesn't compose well; mixing inheritance with configuration data leads to confusion",
+          "Silent state mutation: save() in TimestampedModel modifies updated_at without caller awareness, breaking principle of least surprise"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Deep inheritance chains with implicit side effects and no error handling create brittle, untestable code that should be replaced with explicit composition and transaction boundaries."
+      },
+      "usage": {
+        "prompt_tokens": 335,
+        "completion_tokens": 212,
+        "total_tokens": 547,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 335
+      }
+    },
+    {
+      "snippet_id": "arch_inheritance_depth",
+      "domain": "architecture",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Inheritance chain violates Liskov substitution: SoftDeleteModel.delete() calls self.save() which triggers TimestampedModel.save() setting updated_at, but a soft delete should not update updated_at.",
+          "BaseModel.save() assumes db.insert but SoftDeleteModel.delete() calls self.save() after setting deleted_at, which would insert a duplicate row instead of updating.",
+          "No transaction or atomicity guarantees: save() and delete() are not atomic, risking partial updates."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "Deep inheritance without clear semantics leads to hidden side effects and violates the principle that code should communicate intent to human readers first."
+      },
+      "usage": {
+        "prompt_tokens": 314,
+        "completion_tokens": 180,
+        "total_tokens": 494,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 314
+      }
+    },
+    {
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Direct ORM usage is fine for simple CRUD, but consider batching the email send or making it async to avoid blocking the request."
+      },
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 89,
+        "total_tokens": 479,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 390
+      }
+    },
+    {
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for database commit failure (e.g., constraint violation, connection loss) — user may be left in inconsistent state",
+          "get_by_id returns None if user not found, but deactivate doesn't check for None before accessing .active — will raise AttributeError",
+          "hash_pw is undefined; likely a typo or missing import",
+          "No transaction rollback on email service failure — user is committed but welcome email may not send"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 3,
+        "key_observation": "The code ignores error paths and assumes perfect execution, which is a recipe for silent data corruption."
+      },
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 164,
+        "total_tokens": 564,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 400
+      }
+    },
+    {
+      "snippet_id": "arch_service_layer",
+      "domain": "architecture",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Service layer provides clear separation of concerns but lacks transactional safety for the deactivate method and should consider password hashing as a domain responsibility."
+      },
+      "usage": {
+        "prompt_tokens": 379,
+        "completion_tokens": 87,
+        "total_tokens": 466,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 379
+      }
+    },
+    {
+      "snippet_id": "arch_singleton",
+      "domain": "architecture",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Singleton pattern hides global state and makes testing impossible without mocking static methods",
+          "Environment variable access at import time causes silent failures if not set",
+          "No connection pool validation or retry logic on failure",
+          "Thread safety not guaranteed for _instance creation in multithreaded context"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Singleton adds unnecessary global coupling and testing pain for zero performance benefit over a simple module-level pool."
+      },
+      "usage": {
+        "prompt_tokens": 359,
+        "completion_tokens": 130,
+        "total_tokens": 489,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 359
+      }
+    },
+    {
+      "snippet_id": "arch_singleton",
+      "domain": "architecture",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Missing error handling for missing environment variables",
+          "Singleton pattern makes testing impossible without global state pollution",
+          "No connection pool validation or health checks",
+          "Thread safety not guaranteed for _instance creation"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 1,
+        "key_observation": "Global mutable state via singleton kills testability and hides dependency relationships."
+      },
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 106,
+        "total_tokens": 475,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 369
+      }
+    },
+    {
+      "snippet_id": "arch_singleton",
+      "domain": "architecture",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Singleton pattern hides global state and makes testing impossible without mocking static methods; environment variables accessed at class creation time without validation or fallback; connection pool created once with no lifecycle management or cleanup; no error handling for pool exhaustion or connection failures; query method leaks connection if conn.execute raises exception before pool.put"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 1,
+        "key_observation": "This singleton conflates object creation with configuration and resource management, violating separation of concerns and making the code untestable and brittle."
+      },
+      "usage": {
+        "prompt_tokens": 348,
+        "completion_tokens": 142,
+        "total_tokens": 490,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 348
+      }
+    },
+    {
+      "snippet_id": "arch_microservice_boundary",
+      "domain": "architecture",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "HTTP call in hot path for every item creates O(n) network latency and potential cascading failures",
+          "Mixing synchronous HTTP calls with inventory DB access leads to unpredictable total latency",
+          "No error handling for network failures or invalid responses from pricing service"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 1,
+        "score_maintainability": 2,
+        "key_observation": "Replace per-item HTTP calls with a batch pricing endpoint or cached lookup to eliminate O(n) network overhead and improve reliability."
+      },
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 135,
+        "total_tokens": 507,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 372
+      }
+    },
+    {
+      "snippet_id": "arch_microservice_boundary",
+      "domain": "architecture",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "HTTP call for pricing silently mutates order object without error handling or rollback on failure",
+          "No error handling for network failures or non-200 responses from pricing service",
+          "Inventory check uses inline logic duplicating business rules, violating DRY and maintainability",
+          "Function mixes two unrelated concerns (inventory validation and price update) with different failure modes"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "Silent mutation of order data during validation without error handling or transactional guarantees is a correctness disaster."
+      },
+      "usage": {
+        "prompt_tokens": 382,
+        "completion_tokens": 153,
+        "total_tokens": 535,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 382
+      }
+    },
+    {
+      "snippet_id": "arch_microservice_boundary",
+      "domain": "architecture",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Inline inventory check duplicates business logic and violates separation of concerns",
+          "HTTP call for pricing mutates input order object as side effect, breaking referential transparency",
+          "No error handling for network failures or missing inventory/pricing data",
+          "Mixed concerns: validation and mutation in same function"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 1,
+        "key_observation": "The function conflates validation with data mutation and lacks error handling, making it neither correct nor maintainable."
+      },
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 139,
+        "total_tokens": 500,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 361
+      }
+    },
+    {
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The code is clean and testable, but _apply_promotions could be optimized by avoiding repeated sorting and using a running discount cap more directly."
+      },
+      "usage": {
+        "prompt_tokens": 401,
+        "completion_tokens": 91,
+        "total_tokens": 492,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 401
+      }
+    },
+    {
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "_apply_promotions uses self.promos which is not defined or passed in, breaking encapsulation and testability",
+          "No error handling for missing or invalid items, tax_region, or promos",
+          "Discount can exceed subtotal but is capped with min, yet tax is computed on subtotal - discount which could be zero or negative without guard"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The private methods are fine to test directly if they contain complex logic, but the real issue is the missing dependency injection for promos and lack of input validation."
+      },
+      "usage": {
+        "prompt_tokens": 411,
+        "completion_tokens": 159,
+        "total_tokens": 570,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 411
+      }
+    },
+    {
+      "snippet_id": "test_private_methods",
+      "domain": "testing",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The code is clean and logically structured, but the discount cap min(total_discount, subtotal) may mask an invariant violation if promotions exceed subtotal."
+      },
+      "usage": {
+        "prompt_tokens": 390,
+        "completion_tokens": 92,
+        "total_tokens": 482,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 390
+      }
+    },
+    {
+      "snippet_id": "test_mock_vs_real",
+      "domain": "testing",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "Mocking the email sender is fine for unit testing, but you should also have an integration test that actually sends an email to catch real-world issues like SMTP configuration or template rendering errors."
+      },
+      "usage": {
+        "prompt_tokens": 350,
+        "completion_tokens": 99,
+        "total_tokens": 449,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 350
+      }
+    },
+    {
+      "snippet_id": "test_mock_vs_real",
+      "domain": "testing",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "Test is clean and focused on behavior, but lacks verification that the template is actually rendered with the correct data, and the mock template's return value is hardcoded rather than derived from input."
+      },
+      "usage": {
+        "prompt_tokens": 360,
+        "completion_tokens": 99,
+        "total_tokens": 459,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 360
+      }
+    },
+    {
+      "snippet_id": "test_mock_vs_real",
+      "domain": "testing",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The test mocks the template and sender, which isolates the logic but may miss integration issues like template rendering or SMTP failures."
+      },
+      "usage": {
+        "prompt_tokens": 339,
+        "completion_tokens": 87,
+        "total_tokens": 426,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 339
+      }
+    },
+    {
+      "snippet_id": "test_coverage_target",
+      "domain": "testing",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "locale.format_string is not a standard Python API; likely a typo or non-existent method, will crash at runtime",
+          "No handling for NaN or infinity floats, which would produce unexpected output",
+          "Using chr(0x2014) for None is clever but surprising; a simple '-' or 'N/A' is clearer and faster"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The code has a fatal bug (non-existent locale method) and lacks robustness for edge cases, making it untrustworthy despite decent performance."
+      },
+      "usage": {
+        "prompt_tokens": 343,
+        "completion_tokens": 165,
+        "total_tokens": 508,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 343
+      }
+    },
+    {
+      "snippet_id": "test_coverage_target",
+      "domain": "testing",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "locale.format_string is not a standard Python locale method; likely a typo or non-existent API",
+          "No handling for non-finite floats (inf, nan) which would produce invalid currency output",
+          "Missing import for locale module and no fallback for unsupported locales"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The code uses a non-existent locale API and fails to handle edge cases like infinity or NaN, making it incorrect despite clear intent."
+      },
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 136,
+        "total_tokens": 489,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 353
+      }
+    },
+    {
+      "snippet_id": "test_coverage_target",
+      "domain": "testing",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "locale.format_string is not a standard Python method; likely a typo or undefined function",
+          "locale parameter is accepted but never used to select actual locale formatting",
+          "No handling for non-US currency symbols or internationalization"
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The function pretends to support locale but hardcodes dollar sign and uses a nonexistent formatting method, making it incorrect for any real use."
+      },
+      "usage": {
+        "prompt_tokens": 332,
+        "completion_tokens": 133,
+        "total_tokens": 465,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 332
+      }
+    },
+    {
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Snapshot testing with full literal assertion is brittle; any unrelated change (e.g., new field, order change) breaks the test, and it doesn't isolate what's actually important about the API response."
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 5,
+        "score_maintainability": 1,
+        "key_observation": "This test couples correctness to exact output, making it fragile and high-maintenance without focusing on the contract's essential invariants."
+      },
+      "usage": {
+        "prompt_tokens": 361,
+        "completion_tokens": 121,
+        "total_tokens": 482,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 361
+      }
+    },
+    {
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Hardcoded snapshot of entire response is brittle; any unrelated change (e.g., new field, order change) breaks test without indicating what actually broke",
+          "No validation of essential fields separately; snapshot masks whether critical data like id or email is correct",
+          "Test does not handle API errors or edge cases (e.g., user not found, different plans)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 3,
+        "score_maintainability": 1,
+        "key_observation": "Snapshot testing here is a lazy substitute for explicit assertions on meaningful data, making the test fragile and uninformative."
+      },
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 151,
+        "total_tokens": 522,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 371
+      }
+    },
+    {
+      "snippet_id": "test_snapshot_vs_assert",
+      "domain": "testing",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Snapshot testing is acceptable here for a stable API contract, but consider extracting expected data to a fixture for reuse and to avoid duplication when fields change."
+      },
+      "usage": {
+        "prompt_tokens": 350,
+        "completion_tokens": 90,
+        "total_tokens": 440,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 350
+      }
+    },
+    {
+      "snippet_id": "type_any_vs_generic",
+      "domain": "type_system",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 3,
+        "score_maintainability": 4,
+        "key_observation": "The branch for single key avoids tuple overhead but still allocates a list; for hot paths consider yielding or using a list comprehension with a fixed key count."
+      },
+      "usage": {
+        "prompt_tokens": 300,
+        "completion_tokens": 92,
+        "total_tokens": 392,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 300
+      }
+    },
+    {
+      "snippet_id": "type_any_vs_generic",
+      "domain": "type_system",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The function silently returns None for missing keys, which may hide data errors; consider raising or providing a default."
+      },
+      "usage": {
+        "prompt_tokens": 310,
+        "completion_tokens": 83,
+        "total_tokens": 393,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 310
+      }
+    },
+    {
+      "snippet_id": "type_any_vs_generic",
+      "domain": "type_system",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The special case for a single key is a premature optimization that complicates the code without measurable benefit, as the tuple path already handles it correctly."
+      },
+      "usage": {
+        "prompt_tokens": 289,
+        "completion_tokens": 90,
+        "total_tokens": 379,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 289
+      }
+    },
+    {
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 3,
+        "key_observation": "Direct type casting is fast and simple, but lacks explicit error handling for malformed payloads which could cause runtime crashes."
+      },
+      "usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 85,
+        "total_tokens": 388,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 303
+      }
+    },
+    {
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for missing keys or invalid types; will raise KeyError or ValueError on malformed input",
+          "Silent fallback to empty dict for metadata hides potential data integrity issues",
+          "Type casting without validation allows garbage data to pass through (e.g., negative user_id, non-numeric amount)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 1,
+        "score_efficiency": 3,
+        "score_maintainability": 2,
+        "key_observation": "This function assumes perfect input and will crash or silently corrupt data on any deviation from expected schema."
+      },
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 136,
+        "total_tokens": 449,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 313
+      }
+    },
+    {
+      "snippet_id": "type_cast_vs_validate",
+      "domain": "type_system",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "No error handling for missing keys or invalid types; assumes payload structure is always correct",
+          "Type coercion (e.g., int(payload['user_id'])) silently loses information or raises unhandled exceptions",
+          "No validation of semantic constraints (e.g., negative amount, future timestamp)"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "The code conflates parsing with validation, leaving the API boundary vulnerable to malformed input without explicit invariants or error reporting."
+      },
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 143,
+        "total_tokens": 435,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 292
+      }
+    },
+    {
+      "snippet_id": "type_enums_vs_strings",
+      "domain": "type_system",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "String constants are fine for this use case; an enum adds abstraction without performance benefit, but consider using a set for faster transition lookups."
+      },
+      "usage": {
+        "prompt_tokens": 367,
+        "completion_tokens": 88,
+        "total_tokens": 455,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 367
+      }
+    },
+    {
+      "snippet_id": "type_enums_vs_strings",
+      "domain": "type_system",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "String constants are fine here but an Enum would enforce type safety and prevent typos at the cost of slightly more verbose comparisons."
+      },
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 85,
+        "total_tokens": 462,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 377
+      }
+    },
+    {
+      "snippet_id": "type_enums_vs_strings",
+      "domain": "type_system",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "The code is clear and correct, but using an Enum would enforce type safety and prevent accidental typos in status strings."
+      },
+      "usage": {
+        "prompt_tokens": 356,
+        "completion_tokens": 85,
+        "total_tokens": 441,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 356
+      }
+    },
+    {
+      "snippet_id": "type_default_args",
+      "domain": "type_system",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Mutable default arguments (event_types, callbacks) cause surprising shared state across calls"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Mutable default arguments create hidden bugs; use None sentinel and initialize inside function."
+      },
+      "usage": {
+        "prompt_tokens": 313,
+        "completion_tokens": 89,
+        "total_tokens": 402,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 313
+      }
+    },
+    {
+      "snippet_id": "type_default_args",
+      "domain": "type_system",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Mutable default arguments (event_types, callbacks) cause shared state across calls, leading to subtle bugs"
+        ],
+        "score_clarity": 3,
+        "score_correctness": 2,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Using mutable default arguments is a classic Python pitfall that silently corrupts state; use None sentinels and initialize inside the function."
+      },
+      "usage": {
+        "prompt_tokens": 323,
+        "completion_tokens": 103,
+        "total_tokens": 426,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 323
+      }
+    },
+    {
+      "snippet_id": "type_default_args",
+      "domain": "type_system",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "REJECT",
+        "critical_issues": [
+          "Mutable default arguments (event_types and callbacks) are shared across calls, leading to unexpected state accumulation and bugs."
+        ],
+        "score_clarity": 2,
+        "score_correctness": 1,
+        "score_efficiency": 4,
+        "score_maintainability": 2,
+        "key_observation": "Using mutable defaults like [] and ['push','pull_request'] violates Python's semantics and will cause subtle, hard-to-find errors."
+      },
+      "usage": {
+        "prompt_tokens": 302,
+        "completion_tokens": 107,
+        "total_tokens": 409,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 302
+      }
+    },
+    {
+      "snippet_id": "type_duck_vs_isinstance",
+      "domain": "type_system",
+      "persona": "carmack",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 5,
+        "score_efficiency": 5,
+        "score_maintainability": 4,
+        "key_observation": "The duck typing approach with hasattr is efficient and correct, but consider using try/except for AttributeError to avoid potential false positives from objects with a write attribute that isn't callable."
+      },
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 99,
+        "total_tokens": 411,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 312
+      }
+    },
+    {
+      "snippet_id": "type_duck_vs_isinstance",
+      "domain": "type_system",
+      "persona": "torvalds",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The duck typing check for 'write' is reasonable but could be more robust by also checking for 'writable' or using io.IOBase for stricter file-like validation."
+      },
+      "usage": {
+        "prompt_tokens": 322,
+        "completion_tokens": 94,
+        "total_tokens": 416,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 322
+      }
+    },
+    {
+      "snippet_id": "type_duck_vs_isinstance",
+      "domain": "type_system",
+      "persona": "knuth",
+      "pre_reg_hash": "429b32cc1774589c",
+      "parsed": {
+        "verdict": "APPROVE_WITH_NOTES",
+        "critical_issues": [],
+        "score_clarity": 4,
+        "score_correctness": 4,
+        "score_efficiency": 4,
+        "score_maintainability": 4,
+        "key_observation": "The duck typing approach is sound, but the isinstance check for str is fragile and should use os.PathLike or a try/except pattern for broader path compatibility."
+      },
+      "usage": {
+        "prompt_tokens": 301,
+        "completion_tokens": 93,
+        "total_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 301
+      }
+    }
+  ]
+}
