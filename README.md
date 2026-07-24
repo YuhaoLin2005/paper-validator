@@ -160,7 +160,7 @@ See the **[Navigation Map](https://github.com/YuhaoLin2005/hermes-workspace/blob
 ## Related
 
 - [**hermes-workspace**](https://github.com/YuhaoLin2005/hermes-workspace) — Paper, experiments, data, and [NAVIGATION.md](https://github.com/YuhaoLin2005/hermes-workspace/blob/main/NAVIGATION.md)
-- [**DEV.to**](https://dev.to/yuhaolin2005) — 11+ technical articles detailing each layer and experiment
+- [**DEV.to**](https://dev.to/yuhaolin2005) — 31 articles detailing each layer and experiment
 - [**掘金 (Juejin)**](https://juejin.cn/user/4250072430682412) — Chinese-language deep dives
 
 ## License
