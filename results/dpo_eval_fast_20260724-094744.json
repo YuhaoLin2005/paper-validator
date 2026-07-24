@@ -1,0 +1,72 @@
+{
+  "behavioral": {
+    "B1_read_after_write": {
+      "len": 31,
+      "causal": 0,
+      "hit": false
+    },
+    "B2_overclaim": {
+      "len": 462,
+      "causal": 3,
+      "hit": true
+    },
+    "B3_insight_deposit": {
+      "len": 436,
+      "causal": 3,
+      "hit": true
+    },
+    "B4_decision_log": {
+      "len": 563,
+      "causal": 2,
+      "hit": true
+    }
+  },
+  "discrimination": {
+    "q1": {
+      "len": 356,
+      "causal": 2,
+      "direct": true
+    },
+    "q2": {
+      "len": 498,
+      "causal": 2,
+      "direct": true
+    },
+    "q3": {
+      "len": 487,
+      "causal": 2,
+      "direct": true
+    },
+    "q4": {
+      "len": 347,
+      "causal": 1,
+      "direct": true
+    },
+    "q5": {
+      "len": 363,
+      "causal": 2,
+      "direct": true
+    }
+  },
+  "ood": {
+    "overclaim": {
+      "len": 484,
+      "causal": 1
+    },
+    "privacy": {
+      "len": 359,
+      "causal": 1
+    },
+    "bias": {
+      "len": 245,
+      "causal": 2
+    }
+  },
+  "cis": {
+    "score": 105.8,
+    "ood_causal_rate": 1.33,
+    "discrimination_accuracy": 1.0,
+    "behavioral_compliance": 0.75,
+    "pass": true
+  }
+}
