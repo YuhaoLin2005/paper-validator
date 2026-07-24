@@ -176,7 +176,7 @@ So I ran a per-token analysis — instead of comparing whole-sequence NLL, compu
 | Knowledge insight | 96 | 3.53 | **3.39** | −4.0% |
 | **Mean** | 66 | **3.23** | **3.05** | **−5.5%** |
 
-![Per-token NLL: Base vs DPO across 5 domains](https://raw.githubusercontent.com/YuhaoLin2005/paper-validator/main/results/per_token_nll_comparison.png)
+![Per-token NLL: Base vs DPO across 5 domains](https://raw.githubusercontent.com/YuhaoLin2005/paper-validator/master/results/per_token_nll_comparison.png)
 
 DPO reduces per-token NLL on causal responses by 5.5% on average. The model is measurably more "certain" about each causal reasoning token after training.
 
