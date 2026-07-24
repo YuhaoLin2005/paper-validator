@@ -126,4 +126,5 @@ def quick_chat(
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
-    return call_api(messages, api_key=api_key, logprobs=logprobs, **kwargs)
+    filtered = {k: v for k, v in kwargs.items() if v is not None}
+    return call_api(messages, api_key=api_key, logprobs=logprobs, **filtered)

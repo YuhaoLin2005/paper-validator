@@ -1,0 +1,37 @@
+{
+  "syll": {
+    "condition": "syll",
+    "pre_reg_hash": "da3d55eff4bc8a27",
+    "n_tasks": 5,
+    "n_completed": 5,
+    "total_tokens": 0,
+    "trials": [
+      {
+        "task_id": "T1.1",
+        "response": "[dry_run]",
+        "scoring": null
+      },
+      {
+        "task_id": "T1.2",
+        "response": "[dry_run]",
+        "scoring": null
+      },
+      {
+        "task_id": "T1.3",
+        "response": "[dry_run]",
+        "scoring": null
+      },
+      {
+        "task_id": "T1.4",
+        "response": "[dry_run]",
+        "scoring": null
+      },
+      {
+        "task_id": "T1.5",
+        "response": "[dry_run]",
+        "scoring": null
+      }
+    ],
+    "timestamp": "2026-07-23T17:58:27Z"
+  }
+}

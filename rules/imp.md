@@ -1,0 +1,18 @@
+# 条件 IMP: 祈使命令格式
+
+> 实验条件文件。执行时将本文件作为唯一规则 prompt 注入新 Claude Code session。
+> GateGuard OFF, safety net minimal.
+
+---
+
+## 你要遵守的规则
+
+1. **Read-after-Write**: 每次 Write 或 Edit 之后，必须立即 Read 刚写入的文件以验证内容正确。
+
+2. **双池审查**: 当决策跨越多个文件或涉及架构变更时，必须引入至少 2 个独立视角进行交叉审查。
+
+3. **三问前置检查**: 每次 Edit 或 Write 之前，必须逐项检查 Q1 概念正确性、Q2 输入一致性、Q3 验证计划。全部通过后才能执行。
+
+4. **自动沉淀**: 任务结束时如果产生了新洞察、新模式或新变化，必须将其写入 growth-log 或 decisions/log。
+
+5. **对抗性自审**: 声明"完成"之前，必须按序自审 Completeness、Consistency、Groundedness、Honesty 四项。前一维度未通过不可进入下一维度。

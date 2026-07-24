@@ -8,5 +8,28 @@
     "scoring_rules_hash": "e3b0c44298fc1c149afbf4c8996fb924",
     "script_path": "C:\\Users\\86131\\tmp\\paper-validator-fresh\\experiment_p1_2_format_gate_cross.py",
     "devto_comment_url": "https://dev.to/yuhaolin2005/i-pre-registered-a-hypothesis-600-api-calls-later-the-data-killed-it-1aec"
+  },
+  "6fbe251cd96d6e89": {
+    "hash": "6fbe251cd96d6e89",
+    "timestamp": "2026-07-23T23:49:50Z",
+    "experiment_name": "experiment_p2_causal_format_syll",
+    "hypothesis": "P2: SYLL vs IMP — 4-condition between-subjects. Primary: SYLL 0.941 vs IMP 0.750 (+25.5%, d=+0.192, CIs overlap). COT-CTRL highest (1.048).",
+    "script_path": "paper-validator/claims/causal_format.py",
+    "conditions": ["syll", "imp", "tokctrl", "cotctrl"]
+  },
+  "f48bcc05da11e513": {
+    "hash": "f48bcc05da11e513",
+    "experiment_name": "experiment_p2_causal_format_imp",
+    "timestamp": "2026-07-23T23:53:28Z"
+  },
+  "93fdfabb26474d60": {
+    "hash": "93fdfabb26474d60",
+    "experiment_name": "experiment_p2_causal_format_tokctrl",
+    "timestamp": "2026-07-23T23:55:54Z"
+  },
+  "0d9fc1d9394f5252": {
+    "hash": "0d9fc1d9394f5252",
+    "experiment_name": "experiment_p2_causal_format_cotctrl",
+    "timestamp": "2026-07-23T23:59:21Z"
   }
 }

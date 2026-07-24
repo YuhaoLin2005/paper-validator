@@ -1,0 +1,1685 @@
+{
+  "experiment": "P1-1-cross-model-replication",
+  "design": "5 task types x 20 trials x 2 models = 200 calls",
+  "baseline": "DeepSeek V4 Pro (from experiment_p1_1_residual_cluster.py)",
+  "timestamp": "20260723-023535",
+  "models": [
+    "Qwen/Qwen3.5-27B",
+    "deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "trials_per_task": 20,
+  "Qwen/Qwen3.5-27B": {
+    "model": "Qwen/Qwen3.5-27B",
+    "tasks": {
+      "T1_format_tag": {
+        "label": "Format-tag [L1 mechanizable]",
+        "compliance_rate": 0.8,
+        "compliant": 16,
+        "total": 20
+      },
+      "T2_section_header": {
+        "label": "Section-header [L1 mechanizable]",
+        "compliance_rate": 0.7,
+        "compliant": 14,
+        "total": 20
+      },
+      "T3_checklist": {
+        "label": "Checklist [L1/L2 boundary]",
+        "compliance_rate": 1.0,
+        "compliant": 20,
+        "total": 20
+      },
+      "T4_reasoning": {
+        "label": "Reasoning [L2, semi-mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      },
+      "T5_uncertainty": {
+        "label": "Uncertainty [L2/L3, not mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      }
+    },
+    "trials": [
+      {
+        "task_id": "T1_format_tag",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 32.69,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 19.73,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed)\n    \n    Re"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 13.45,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed)\n    \n    Re"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 39.8,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (non-negative integer).\n\n    Returns:\n        int: The "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 26.15,
+        "error": null,
+        "response_preview": "\n\nHere is an efficient iterative Python function to calculate the nth Fibonacci number:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    Args:\n        n (int): The"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 22.02,
+        "error": null,
+        "response_preview": "\n\nHere is a Python function that calculates the nth Fibonacci number using an iterative approach for efficiency:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    A"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 23.13,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (must be non-negative).\n\n  "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 33.45,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (must be non-negative).\n\n  "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 33.91,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 30.77,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 31.14,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n        \n "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 33.1,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 10.53,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n    \n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n        \n "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 18.51,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (non-negative integer).\n\n    Returns:\n        int: The "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 26.86,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (0-indexed).\n\n    Returns:\n"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 31.5,
+        "error": null,
+        "response_preview": "\n\nHere is a Python function that calculates the nth Fibonacci number using an iterative approach for efficiency:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    A"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 34.04,
+        "error": null,
+        "response_preview": "\n\nHere is a Python function that calculates the nth Fibonacci number using an iterative approach for efficiency:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n    \n    A"
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 36.38,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number using an iterative approach.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (must be non-negative).\n\n  "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 20.35,
+        "error": null,
+        "response_preview": "\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The position in the Fibonacci sequence (non-negative integer).\n\n    Returns:\n        int: The "
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 38.56,
+        "error": null,
+        "response_preview": "\n\nHere is an efficient iterative Python function to calculate the nth Fibonacci number:\n\n```python\ndef fibonacci(n):\n    \"\"\"\n    Calculate the nth Fibonacci number.\n\n    Args:\n        n (int): The pos"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 25.93,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in their approach"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 30.33,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 27.06,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in their approach"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 30.93,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in reliability, s"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 30.92,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for transmitting data across networks, but they operate differently based on re"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 26.04,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 28.56,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in their approach"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 21.37,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for transmitting data over networks, but they differ significantly in reliabili"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 36.12,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 27.8,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 35.78,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for transmitting data over networks, but they differ in reliability, speed, and"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 30.47,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 31.4,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 41.69,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 36.66,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 31.65,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 20.88,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 32.38,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 27.08,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for transmitting data over networks, but they differ significantly in reliabili"
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 24.75,
+        "error": null,
+        "response_preview": "\n\n[ANSWER]:\nTCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport layer protocols used for sending data over networks, but they differ significantly in how they handl"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 1,
+        "compliant": 1,
+        "latency_s": 30.76,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, it is critical to validate stability, security, and configuration. Here is a checklist of essential items to verify:\n\n- [ ] Verify all environmen"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 2,
+        "compliant": 1,
+        "latency_s": 17.24,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all environment variables and configuration settings are correctly set for"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 3,
+        "compliant": 1,
+        "latency_s": 22.59,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Confirm all sensitive data, such as API keys and database credentials, are stored"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 4,
+        "compliant": 1,
+        "latency_s": 18.8,
+        "error": null,
+        "response_preview": "\n\nBefore pushing your code to production, it is crucial to validate stability, security, and configuration. Here is a checklist to guide you:\n\n- [ ] Run all automated unit and integration tests to ens"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 5,
+        "compliant": 1,
+        "latency_s": 19.32,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all environment variables and configuration settings are correctly set for"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 6,
+        "compliant": 1,
+        "latency_s": 21.02,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all security patches and dependencies are up to date.\n- [ ] Confirm enviro"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 7,
+        "compliant": 1,
+        "latency_s": 25.12,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Validate that all environment variables and secrets are securely configured for t"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 8,
+        "compliant": 1,
+        "latency_s": 22.44,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Confirm all environment variables and database credentials are securely configure"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 9,
+        "compliant": 1,
+        "latency_s": 14.16,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Ensure all environment variables and secrets are securely configured for the prod"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 10,
+        "compliant": 1,
+        "latency_s": 14.01,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all environment variables and secrets are correctly configured and not exp"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 11,
+        "compliant": 1,
+        "latency_s": 35.32,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all security patches and dependencies are up to date.\n- [ ] Confirm enviro"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 12,
+        "compliant": 1,
+        "latency_s": 27.54,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify that all environment variables and secrets are correctly configured for th"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 13,
+        "compliant": 1,
+        "latency_s": 31.36,
+        "error": null,
+        "response_preview": "\n\nBefore deploying a web application to production, it is crucial to validate security, functionality, and configuration to prevent downtime or data breaches. Here is a checklist to guide you:\n\n- [ ] "
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 14,
+        "compliant": 1,
+        "latency_s": 38.25,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all environment variables and secrets are correctly configured for the pro"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 15,
+        "compliant": 1,
+        "latency_s": 18.02,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Validate that all environment variables and secrets are securely configured for t"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 16,
+        "compliant": 1,
+        "latency_s": 14.6,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Validate that all environment variables and secrets are securely configured for t"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 17,
+        "compliant": 1,
+        "latency_s": 17.89,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all security patches and dependencies are up to date.\n- [ ] Run automated "
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 18,
+        "compliant": 1,
+        "latency_s": 16.99,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify that all security vulnerabilities and dependencies are patched.\n- [ ] Conf"
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 19,
+        "compliant": 1,
+        "latency_s": 32.36,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify all security patches and dependencies are up to date.\n- [ ] Run automated "
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 20,
+        "compliant": 1,
+        "latency_s": 36.83,
+        "error": null,
+        "response_preview": "\n\nBefore deploying your web application to production, ensure you have completed the following critical checks:\n\n- [ ] Verify that all environment variables and secrets are correctly configured for th"
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 28.55,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 26.17,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 22.21,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 35.19,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 33.36,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 59.33,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 26.77,
+        "error": null,
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 6986.46,
+        "error": "The read operation timed out",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 123.76,
+        "error": "<urlopen error _ssl.c:993: The handshake operation timed out>",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.59,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.15,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.08,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.08,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      }
+    ]
+  },
+  "deepseek-ai/DeepSeek-V4-Flash": {
+    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "tasks": {
+      "T1_format_tag": {
+        "label": "Format-tag [L1 mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      },
+      "T2_section_header": {
+        "label": "Section-header [L1 mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      },
+      "T3_checklist": {
+        "label": "Checklist [L1/L2 boundary]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      },
+      "T4_reasoning": {
+        "label": "Reasoning [L2, semi-mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      },
+      "T5_uncertainty": {
+        "label": "Uncertainty [L2/L3, not mechanizable]",
+        "compliance_rate": 0.0,
+        "compliant": 0,
+        "total": 20
+      }
+    },
+    "trials": [
+      {
+        "task_id": "T1_format_tag",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.16,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.16,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T1_format_tag",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.17,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T2_section_header",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T3_checklist",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.23,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T4_reasoning",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 1,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 2,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 3,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 4,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 5,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 6,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 7,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 8,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 9,
+        "compliant": 0,
+        "latency_s": 0.1,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 10,
+        "compliant": 0,
+        "latency_s": 0.15,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 11,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 12,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 13,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 14,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 15,
+        "compliant": 0,
+        "latency_s": 0.14,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 16,
+        "compliant": 0,
+        "latency_s": 0.13,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 17,
+        "compliant": 0,
+        "latency_s": 0.11,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 18,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 19,
+        "compliant": 0,
+        "latency_s": 0.12,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      },
+      {
+        "task_id": "T5_uncertainty",
+        "trial": 20,
+        "compliant": 0,
+        "latency_s": 0.09,
+        "error": "HTTP Error 403: Forbidden",
+        "response_preview": ""
+      }
+    ]
+  }
+}
