@@ -253,6 +253,8 @@ Not enough for production. Not enough to claim "the model is causally aligned." 
 
 **Per-token preference gap didn't widen.** The per-token analysis (above) showed that DPO increases absolute probability on causal tokens, but the *relative* preference margin between chosen and rejected barely changed (Cohen's d = 0.114). This means DPO's behavioral effect may come from making causal tokens more likely to survive the sampling process during generation, not from changing the model's relative preference. A generation-level mechanism (not a probability-level one) — this needs further study.
 
+**Transparency note: the per-token analysis was post-hoc.** The original evaluation plan used binary logprob preference (chosen vs. rejected). The per-token NLL analysis was written AFTER seeing the ceiling effect (both models scored 5/5). This is flagged here rather than presented as if it were planned. The binary logprob results are the pre-planned measurement; the per-token NLL results are exploratory follow-up.
+
 **No merge_and_unload.** The adapter was applied with PeftModel but not merged into the base weights. 4-bit QLoRA merge hangs on this hardware. Inference with unmerged adapters is slower and may introduce subtle differences from merged inference.
 
 **The B1 failure is unexplained.** Why did read-after-write fail for both models? The training data contained file operation pairs with verification patterns. Possible explanations: (a) the keyword set was incomplete, (b) the prompt format didn't trigger the pattern, (c) the model needs more explicit read-after-write training examples. I don't know which.
